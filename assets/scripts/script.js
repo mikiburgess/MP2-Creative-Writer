@@ -26,6 +26,20 @@ const writingPrompt = {genre: "",
     obstacle: "", ending: ""
 };
 
+const genreCards = [
+	{id: "adventure", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Adventure", 
+        description: "Text description of the adventure genre"},
+    {id: "historical", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Historical", 
+        description: "Text description of the historical genre"},
+    {id: "fantasy", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Fantasy", 
+        description: "Text description of the fantasy genre"},
+    {id: "scary", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Scary", 
+        description: "Text description of the scary genre"},
+    {id: "justwrite", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Just Write!", 
+        description: "Text description of the option"},
+    {id: "experiment", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Experiment", 
+        description: "Text description of the option"}
+];
 
 
 /**
@@ -59,12 +73,14 @@ function initialiseSite(){
             <br>
             Insert - guidance how to use the site.
         </div>
+        <div class="site-text text-prompt-genre">
+        </div>
     `);
 
     $("#middle-section").empty();
 
     $("#lower-section").html(`
-        <button type="button" class="btn site-btn btn-begin" onclick="buildPromptSection()">
+        <button type="button" class="btn site-btn btn-begin" onclick="buildGenreCardsSection()">
             Click here to begin ...
         </button>
     `);
@@ -94,14 +110,66 @@ function refresh(promptData) {
 }
 
 
+function displaySelectedGenre(selectedGenre) {
+    $(".text-prompt-genre").text(selectedGenre);
+};
+
+/**
+ * Build and display the genre cards section.
+ * 
+ */ 
+function buildGenreCardsSection() {
+    // 1. Add display for currently selected genre (upper section)
+    // 2. iterate though each genre card 
+    //      generate content
+    // 3. update HTML section content (middle section)
+    // 4. add the 'inspire me' button (lower section)
+
+    console.log("function called successfully: buildGenreCardsSection()");
+
+    // Clear previous content from upper section
+    $(".text-writing-guidance").empty();
+    displaySelectedGenre("Test");
+    
+    $("#middle-section").html(`
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-center genre-cards">
+        </div>
+    `);
+
+    // Build HTML for the middle section
+    for (i = 0; i < genreCards.length; i++) {
+        $(".genre-cards").append(`
+            <div class="col col-genre-card">
+                <div class="card genre-card shadow h-100" id="${genreCards[i].id}">
+                    <img src="assets/images/${genreCards[i].image}" class="card-img-top shadow img-genre-card site-img" alt="${genreCards[i].altText}">
+                <div class="card-body">
+                  <h5 class="card-title">${genreCards[i].displayName}</h5>
+                  <p class="card-text">${genreCards[i].description}</p>
+                </div>
+                <button class="btn btn-genre-card-select site-btn" role="button">Select ${genreCards[i].displayName}!</button>
+              </div>
+            </div>
+        `);
+        
+    };
+
+    $("#lower-section").html(`
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-genre-inspire site-btn" type="button" onClick="buildPromptSection('Adventure', 2)">Inspire me ...</button>
+             </div>
+        </div>
+    `);
+};
+
 /**
  * Build and display the generated writing prompt section.
  * 
- * @param {object} promptData Object containing all elements of the generated writing prompt
+ * @param {object} chosenGenre 
  * @param {int} numColumns Max number of columns required for the site
  * @return {type} description.
  */ 
-function buildPromptSection(promptData, numColumns){
+function buildPromptSection(chosenGenre, numColumns){
     // 1. identify/specify required prompts
     // 2. set number of columns (initially static - in future to be dynamic)
     // 3. iterate though each required prompt element
@@ -111,7 +179,7 @@ function buildPromptSection(promptData, numColumns){
     
     console.log("function called successfully: buildPromptSection()");
 
-    generatePrompt("General");
+    generatePrompt(chosenGenre);
     
     // Clear previous content from upper section
     $("#upper-section").empty();
@@ -160,4 +228,8 @@ function buildPromptSection(promptData, numColumns){
     `);
 
 };
+
+
+// Starting point - initialise the first stage of the site
+initialiseSite();
 

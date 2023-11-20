@@ -3,11 +3,58 @@
     Author: Mikhaila Burgess, 2023
 */
 
+
+
+
+// Details for each of the writing prompt elements
+const promptDetails = [
+    {id:"heroCharacter", placeholder: "Hero - character", aria:"Type of character for the hero of the story"},
+    {id:"heroMood", placeholder: "Hero - mood", aria:"Mood of the story hero"},
+    {id:"villainCharacter", placeholder: "Villain - character", aria:"Type of character for the villain of the story"},
+    {id:"villainMood", placeholder: "Villain - mood", aria:"Mood of the story villian"},
+    {id:"challenge", placeholder: "Challenge", aria:"The challenge facing the hero"},
+    {id:"item", placeholder: "Item", aria:"An item to be integrated into the story"},
+    {id:"setting", placeholder: "Setting", aria:"The setting, or scene, for the story"},
+    {id:"ending", placeholder: "Ending", aria:"The type of ending to be aimed for"}
+];
+
+var writingPrompt = {genre: "", 
+    heroCharacter: "", heroMood: "",
+    villainCharacter: "", villainMood: "",
+    item: "", setting: "", 
+    obstacle: "", ending: ""
+};
+
+
+
+/**
+ * Initialise a new, empty writing prompt object.
+ */ 
+function initialiseWritingPrompt(){
+
+}
+
 /**
  * Initialise site to be able to generate a new writing prompt.
  */ 
 function initialiseSite(){
     console.log("function called successfully: initialiseSite()");
+
+    $("#upper-section").html(`
+        <div class="site-text text-writing-guidance">
+            Insert - text to welcome vititors to the site.
+            <br>
+            Insert - guidance how to use the site.
+        </div>
+    `);
+
+    $("#middle-section").empty();
+
+    $("#lower-section").html(`
+        <button type="button" class="btn site-btn btn-begin" onclick="buildPromptSection()">
+            Click here to begin ...
+        </button>
+    `);
 }
 
 
@@ -53,15 +100,6 @@ function buildPromptSection(prompt){
     // Clear previous content from upper section
     $("#upper-section").empty();
 
-    // Add boxes for displaying the prompts plus refresh buttons
-    let promptDetails = [
-        {id:"hero-character", placeholder: "Hero - character", aria:"Type of character for the hero of the story"},
-        {id:"hero-mood", placeholder: "Hero - mood", aria:"Mood of the story hero"},
-        {id:"challenge", placeholder: "Challenge", aria:"The challenge facing the hero"},
-        {id:"item", placeholder: "Item", aria:"An item to be integrated into the story"},
-        {id:"setting", placeholder: "Setting", aria:"The setting, or scene, for the story"},
-        {id:"ending", placeholder: "Ending", aria:"The type of ending to be aimed for"}
-    ];
     // Max number of columns to be included per row (currently static)
     var numColumns = 2;
 

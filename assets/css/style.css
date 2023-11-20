@@ -101,12 +101,28 @@ p.lead{
     transition-property: border;
     transition-property: margin_bottom;
     transition-timing-function: ease-in-out;
-    transition-duration: 5s;
+    transition-duration: .2s;
+}
+
+.btn-genre-card-select {
+    text-align: center;
+    align-self: center;
+    width: 90%;
+}
+
+.col-btn-refresh {
+    padding-left: 0;
+    margin-left: 0;
+}
+.btn-refresh {
+    color: var(--palette-dark);
+    font-size: large;
+    font-weight: 400;
+    text-align: right;
 }
 
 .site-btn-minimalist {}
 
-.btn-restart,
 .btn-refresh {}
 
 .btn-begin, 
@@ -115,7 +131,6 @@ p.lead{
 .btn-genre-inspire,
 .btn-email {}
 
-.btn-genre-card-select {}
 
 
 /* SITE INTERACTION ------------------------------------------ */
@@ -123,18 +138,39 @@ p.lead{
     background-color: #820263;
 }
 
-
 .site-btn:hover {
     background-color: var(--palette-chocolate);
     color: var(--palette-pale);
-    border: var(--palette-rich);
-    border-style: solid;
+    
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.25);
+    font-weight: bolder;
+    /* margin: 10px;
+    margin-top: 4px; */
+    /* transition: all .2s ease-in-out; */
+}
+
+
+/* .btn-genre-card-select:hover {
+    background-color: var(--palette-chocolate);
+    color: var(--palette-pale);
     
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.25);
     font-weight: bolder;
     margin: 10px;
     margin-top: 4px;
-    /* transition: all .2s ease-in-out; */
+    transition: all .2s ease-in-out;
+} */
+
+.btn-genre-card-select:active {
+    border: var(--palette-rich);
+    border-style: solid;
+}
+
+.btn-refresh:hover {
+    color: var(--palette-rich);
+    font-weight: 800;
+    font-size: x-large;
+    transition: all .2s ease-in-out;
 }
 
 
@@ -199,7 +235,7 @@ p.lead{
     .btn-genre-card-select {
         font-size: 15px;
         line-height: 28px;
-        width: 75%;
+        width: 80%;
         max-width: 250px;
         color: blueviolet;
     }
@@ -257,7 +293,7 @@ p.lead{
     .btn-genre-card-select {
         color: #d90368;
         
-        width: 60%;
+        width: 75%;
     }
 
 }

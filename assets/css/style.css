@@ -21,11 +21,12 @@
 /* SITE SECTIONS -------------------------------------------- */
 
 header {
-    background-color: lightgray;
-    margin-top: 120px;
+    /* background-color: lightgray; */
+    margin-top: 75px;
 }
 
 body {
+    background-color: var(--palette-pale);
     background-image: url("../images/calligraphy-faded.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,7 +35,7 @@ body {
 }
 
 footer {
-    background-color:burlywood;
+    /* background-color:burlywood; */
     width: 100%;
     text-align: center;
     min-height: 35px;
@@ -48,7 +49,18 @@ footer {
 
 /* SITE TEXT ----------------------------------------------- */
 
-p {}
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 600;
+}
+
+p,
+.site-text {
+    font-family: 'Alice', serif;
+}
 
 p.lead{
     padding-bottom: 5px;
@@ -59,7 +71,7 @@ p.lead{
 
 
 .site-heading {
-    background-color: pink;
+    /* background-color: pink; */
     color: var(--palette-dark);
     align-self: center;
     margin-top: 20px;
@@ -162,8 +174,8 @@ p.lead{
 } */
 
 .btn-genre-card-select:active {
-    border: var(--palette-rich);
-    border-style: solid;
+    /* border: var(--palette-rich);
+    border-style: solid; */
 }
 
 .btn-refresh:hover {
@@ -178,7 +190,7 @@ p.lead{
 /* STORY CARDS ---------------------------------------------- */
 
 .genre-card {
-    background-color: beige;
+    background-color: var(--palette-pale);
     border-radius: 15px;
     opacity: 0.9;
 
@@ -217,7 +229,7 @@ p.lead{
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     body {
-        background-color:blue;
+        /* background-color:blue; */
     }
 
     .genre-card {
@@ -237,14 +249,13 @@ p.lead{
         line-height: 28px;
         width: 80%;
         max-width: 250px;
-        color: blueviolet;
     }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     body {
-        background-color:lightskyblue;
+        /* background-color:lightskyblue; */
     }
     
     .genre-card {
@@ -262,8 +273,6 @@ p.lead{
     } */
 
     .btn-genre-card-select {
-        color: plum;
-
         font-size: 16px;
         line-height: 32px; 
         /* width: 300px; */
@@ -274,7 +283,7 @@ p.lead{
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     body {
-        background-color:aqua;
+        /* background-color:aqua; */
     }
 
     .genre-card {
@@ -291,8 +300,6 @@ p.lead{
 
 
     .btn-genre-card-select {
-        color: #d90368;
-        
         width: 75%;
     }
 
@@ -301,13 +308,13 @@ p.lead{
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     body {
-        background-color:aquamarine;
+        /* background-color:aquamarine; */
     }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
     body {
-        background-color:powderblue;
+        /* background-color:powderblue; */
     }
 }

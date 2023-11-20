@@ -196,7 +196,7 @@ function buildPromptSection(chosenGenre, numColumns){
         for (l=0; l < numColumns; l++) {
             console.log("Loop: i = " + i + " and l = " + l);
             currentHTML += (`
-                <div class="col-8 col-sm-4 col-text-prompt">
+                <div class="col-8 col-md-4 col-text-prompt">
                     <input type="text" class="form-control text-prompt" id="${promptDetails[i+l].id}" 
                         placeholder="${promptDetails[i+l].placeholder}" aria-label=""${promptDetails[i+l].aria}" readonly/>
                 </div>

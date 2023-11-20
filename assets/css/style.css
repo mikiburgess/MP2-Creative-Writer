@@ -6,7 +6,11 @@
 
 /* COLOR PALETTE -------------------------------------------- */
 :root {
-
+    --palette-pale: #FFE6A7;
+    --palette-chocolate: #99582A;
+    --palette-dark: #432818;
+    --palette-caramel: #BB9457;
+    --palette-rich: #6F1D1B;
 }
 
 
@@ -17,34 +21,88 @@
 /* SITE SECTIONS -------------------------------------------- */
 
 header {
-
+    background-color: lightgray;
+    margin-top: 120px;
 }
 
 body {
-
+    background-image: url("../images/calligraphy-faded.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* align-items: center; */
 }
 
 footer {
-
+    background-color:burlywood;
+    width: 100%;
+    text-align: center;
+    min-height: 35px;
+    margin: 0;
 }
 
+#upper-section,
+#lower-section {
+    text-align: center;
+}
 
 /* SITE TEXT ----------------------------------------------- */
 
 p {}
+
+p.lead{
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
 .site-text {}
 
 
-.site-heading {}
+.site-heading {
+    background-color: pink;
+    color: var(--palette-dark);
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .site-footer {}
 .text-prompt-genre {}
-.text-prompt {}
+
+.text-prompt {
+    border: var(--palette-caramel);
+    border-style: solid;
+    /* background-color: var(--palette-pale); */
+    color: var(--palette-rich);
+    font-size: larger;
+    font-style: oblique;
+}
+
+.col-text-prompt {
+    padding-right: 0;
+    margin-right: 0;
+    margin-bottom: 20px;
+}
+
 .text-writing-guidance {}
 
 
 /* BUTTONS -------------------------------------------------- */
 
-.site-btn {}
+.site-btn {
+    
+    background-color: var(--palette-chocolate);
+    color: var(--palette-pale);
+    border: var(--palette-caramel);
+    margin: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+    transition-property: font-weight;
+    transition-property: border;
+    transition-property: margin_bottom;
+    transition-timing-function: ease-in-out;
+    transition-duration: 5s;
+}
 
 .site-btn-minimalist {}
 
@@ -60,13 +118,59 @@ p {}
 .btn-genre-card-select {}
 
 
+/* SITE INTERACTION ------------------------------------------ */
+.prompt-text:hover {
+    background-color: #820263;
+}
+
+
+.site-btn:hover {
+    background-color: var(--palette-chocolate);
+    color: var(--palette-pale);
+    border: var(--palette-rich);
+    border-style: solid;
+    
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.25);
+    font-weight: bolder;
+    margin: 10px;
+    margin-top: 4px;
+    /* transition: all .2s ease-in-out; */
+}
+
+
+
 /* STORY CARDS ---------------------------------------------- */
 
-.genre-card {}
+.genre-card {
+    background-color: beige;
+    border-radius: 15px;
+    opacity: 0.9;
 
-.img-genre-card {}
+    padding:  2px 10%;
+
+    /* padding: 5px;
+    margin: 10% 2px; */
+
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.col-genre-card {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.img-genre-card {
+    max-width: 90%;
+    align-self: center;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px;
+}
 
 .text-genre-card {}
+
 
 
 /*  MEDIA QUERIES ------------------------------------------- */
@@ -76,25 +180,98 @@ p {}
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+    body {
+        background-color:blue;
+    }
 
+    .genre-card {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 1%;
+        margin-right: 1%;
+        /* max-width: 240px; */
+    }
+
+    .img-genre-card {
+        /* max-width: 220px; */
+    }
+    
+    .btn-genre-card-select {
+        font-size: 15px;
+        line-height: 28px;
+        width: 75%;
+        max-width: 250px;
+        color: blueviolet;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+    body {
+        background-color:lightskyblue;
+    }
+    
+    .genre-card {
+        margin-left: 3%;
+        margin-right: 3%;
+        /* max-width: 300px; */
+    }
+
+    .img-genre-card {
+        /* max-width: 85%; */
+    }
+
+    /* .card-body {
+        padding: 5px 15px;
+    } */
+
+    .btn-genre-card-select {
+        color: plum;
+
+        font-size: 16px;
+        line-height: 32px; 
+        /* width: 300px; */
+    }
 
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+    body {
+        background-color:aqua;
+    }
+
+    .genre-card {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 2%;
+        margin-right: 2%;
+        /* max-width: 300px; */ 
+    }
+    
+    /* .card-body {
+        padding: 10px 18px;
+    } */
+
+
+    .btn-genre-card-select {
+        color: #d90368;
+        
+        width: 60%;
+    }
 
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
+    body {
+        background-color:aquamarine;
+    }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
-
+    body {
+        background-color:powderblue;
+    }
 }

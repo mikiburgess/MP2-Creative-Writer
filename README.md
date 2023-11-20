@@ -5,8 +5,9 @@ It has been designed and developed using a mobile-first approach, and is accessi
 
 ### NOTE: illustrative image of site across devices to be included here
 
-<!-- [Visit the deployed site ](https://mikiburgess.github.io/MP2-Creative-Writer/) -->
+[Visit the deployed site ](https://mikiburgess.github.io/MP2-Creative-Writer/)
 
+![GitHub last commit](https://img.shields.io/github/last-commit/mikiburgess/MP2-Creative-Writer??style=for-the-badge&logo=appveyor)
 - - -
 
 ## Table of Contents

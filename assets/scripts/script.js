@@ -31,6 +31,7 @@ function refresh(promptData) {
     console.log("function called successfully: refresh(" + promptData + ")");
 }
 
+
 /**
  * Build and display the generated writing prompt section.
  * 
@@ -50,7 +51,7 @@ function buildPromptSection(prompt){
     generatePrompt("General");
     
     // Clear previous content from upper section
-    $("#upper-section").html('');
+    $("#upper-section").empty();
 
     // Add boxes for displaying the prompts plus refresh buttons
     let promptDetails = [
@@ -65,7 +66,7 @@ function buildPromptSection(prompt){
     var numColumns = 2;
 
     // Clear HTML content of the middle section
-    $("#middle-section").html('');
+    $("#middle-section").empty();
 
     // Build HTML for the middle section
     for (i = 0; i < promptDetails.length; i+= numColumns) {

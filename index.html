@@ -28,14 +28,25 @@
 
 <body>
     <!-- HEADER: contains site title information -->
-    <header class="container-fluid">
-        <h1 id="site-title">The Creative Writer</h1>
-        <p class="lead">lead description to go here</p>
+    <header id="site-header" class="container-fluid">
+        <div>
+            <button class="btn btn-restart" role="button" > 
+                <i class="fa-solid fa-backward-step"></i> Return to start
+            </button>
+        </div>
+        <div class="text-center">
+            <h1 id="site-title">The Creative Writer</h1>
+            <p class="lead">Your place for writing inspiration</p>
+        </div>
     </header>
 
     <!-- UPPER SECTION: contains page information and non-interactive content -->
     <section class="container-fluid section-top">
-        Current selection information and text go here
+        <div class="site-text text-writing-guidance">
+            Insert - text to welcome vititors to the site.
+            <br>
+            Insert - guidance how to use the site.
+        </div>
     </section>
 
     <!-- MIDDLE SECTION: contains interactive elements -->
@@ -45,7 +56,9 @@
 
     <!-- LOWER SECTION: contains buttons and other controls -->
     <section class="container-fluid section-lower">
-        Buttons and other controls go here  
+        <button type="button" class="btn site-btn btn-begin">
+            Click here to begin ...
+        </button>
     </section>
 
     <!-- FOOTER: contains site details -->

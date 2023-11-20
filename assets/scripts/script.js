@@ -32,8 +32,9 @@ const writingPrompt = {genre: "",
  * Initialise a new, empty writing prompt object.
  */ 
 function initialiseWritingPrompt(){
+    console.log("function called successfully: initialiseWritingPrompt()");
 
-    writingPrompt.genre = "";
+    writingPrompt.genre = "General";
     writingPrompt.heroCharacter = "";
     writingPrompt.heroMood = "";
     writingPrompt.villainCharacter = ""; 
@@ -43,7 +44,8 @@ function initialiseWritingPrompt(){
     writingPrompt.obstacle = "";
     writingPrompt.ending = "";
 
-}
+    console.log("Writing prompt is currently: " + Object.values(writingPrompt));
+};
 
 /**
  * Initialise site to be able to generate a new writing prompt.
@@ -66,6 +68,8 @@ function initialiseSite(){
             Click here to begin ...
         </button>
     `);
+
+    initialiseWritingPrompt();
 }
 
 

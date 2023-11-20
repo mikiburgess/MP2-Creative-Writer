@@ -18,7 +18,8 @@ const promptDetails = [
     {id:"ending", placeholder: "Ending", aria:"The type of ending to be aimed for"}
 ];
 
-var writingPrompt = {genre: "", 
+// Current writing prompt content
+const writingPrompt = {genre: "", 
     heroCharacter: "", heroMood: "",
     villainCharacter: "", villainMood: "",
     item: "", setting: "", 
@@ -31,6 +32,16 @@ var writingPrompt = {genre: "",
  * Initialise a new, empty writing prompt object.
  */ 
 function initialiseWritingPrompt(){
+
+    writingPrompt.genre = "";
+    writingPrompt.heroCharacter = "";
+    writingPrompt.heroMood = "";
+    writingPrompt.villainCharacter = ""; 
+    writingPrompt.villainMood = "";
+    writingPrompt.item = "";
+    writingPrompt.setting = ""; 
+    writingPrompt.obstacle = "";
+    writingPrompt.ending = "";
 
 }
 
@@ -82,10 +93,11 @@ function refresh(promptData) {
 /**
  * Build and display the generated writing prompt section.
  * 
- * @param {object} prompt Object containing all elements of the generated writing prompt.
+ * @param {object} promptData Object containing all elements of the generated writing prompt
+ * @param {int} numColumns Max number of columns required for the site
  * @return {type} description.
  */ 
-function buildPromptSection(prompt){
+function buildPromptSection(promptData, numColumns){
     // 1. identify/specify required prompts
     // 2. set number of columns (initially static - in future to be dynamic)
     // 3. iterate though each required prompt element
@@ -101,7 +113,7 @@ function buildPromptSection(prompt){
     $("#upper-section").empty();
 
     // Max number of columns to be included per row (currently static)
-    var numColumns = 2;
+    // var numColumns = 2;
 
     // Clear HTML content of the middle section
     $("#middle-section").empty();

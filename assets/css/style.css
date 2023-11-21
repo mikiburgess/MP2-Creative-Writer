@@ -66,6 +66,7 @@ p, .site-text, .text-genre-card, .text-prompt-genre {
 
 
 p.lead{
+    font-size: calc(14px + 1vw);
     padding-bottom: 5px;
     margin-bottom: 25px;
 }
@@ -77,8 +78,9 @@ p.lead{
     /* background-color: pink; */
     color: var(--palette-dark);
     align-self: center;
+    font-size: calc(32px + 2.5vw);
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .site-footer {
@@ -223,7 +225,7 @@ p.lead{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: calc(18px + 2vw);
+    font-size: calc(18px + 1.5vw);
     font-style: italic;
 }
 

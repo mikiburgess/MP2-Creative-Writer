@@ -1,7 +1,11 @@
 /* JAVASCRIPT file for THE CREATIVE WRITER
     Code Institute Milestone Project 2
     Author: Mikhaila Burgess, 2023
+
+    JS version - ES6
 */
+
+/*jshint esversion: 6 */
 
 
 
@@ -59,7 +63,7 @@ function initialiseWritingPrompt(){
     writingPrompt.ending = "";
 
     console.log("Writing prompt is currently: " + Object.values(writingPrompt));
-};
+}
 
 /**
  * Initialise site to be able to generate a new writing prompt.
@@ -97,7 +101,7 @@ function initialiseSite(){
  */ 
 function generatePrompt(genreData) {
     console.log("function called successfully: generatePrompt(" + genreData + ")");
-}; 
+} 
 
 
 /**
@@ -112,7 +116,7 @@ function refresh(promptData) {
 
 function displaySelectedGenre(selectedGenre) {
     $(".text-prompt-genre").text(selectedGenre);
-};
+}
 
 /**
  * Build and display the genre cards section.
@@ -137,7 +141,7 @@ function buildGenreCardsSection() {
     `);
 
     // Build HTML for the middle section
-    for (i = 0; i < genreCards.length; i++) {
+    for (let i = 0; i < genreCards.length; i++) {
         $(".genre-cards").append(`
             <div class="col col-genre-card">
                 <div class="card genre-card shadow h-100" id="${genreCards[i].id}">
@@ -151,7 +155,7 @@ function buildGenreCardsSection() {
             </div>
         `);
         
-    };
+    }
 
     $("#lower-section").html(`
         <div class="row">
@@ -160,7 +164,7 @@ function buildGenreCardsSection() {
              </div>
         </div>
     `);
-};
+}
 
 /**
  * Build and display the generated writing prompt section.
@@ -191,9 +195,9 @@ function buildPromptSection(chosenGenre, numColumns){
     $("#middle-section").empty();
 
     // Build HTML for the middle section
-    for (i = 0; i < promptDetails.length; i+= numColumns) {
-        let currentHTML = ""
-        for (l=0; l < numColumns; l++) {
+    for (let i = 0; i < promptDetails.length; i+= numColumns) {
+        let currentHTML = "";
+        for (let l=0; l < numColumns; l++) {
             console.log("Loop: i = " + i + " and l = " + l);
             currentHTML += (`
                 <div class="col-8 col-md-4 col-text-prompt">
@@ -204,14 +208,14 @@ function buildPromptSection(chosenGenre, numColumns){
                     <button class="btn btn-refresh btn-refresh-${promptDetails[i+l].id}" role="button" onClick="refresh('${promptDetails[i+l].id}')"><i class="fa-solid fa-arrows-rotate"></i></button>
                 </div>    
             `);
-        };
+        }
 
         // Update section content
         $("#middle-section").append(`
             <div class="row justify-content-center">
                 ${currentHTML}
             </div>`);
-    };
+    }
 
     // Add interactive buttons to the lower section
     $("#lower-section").html(`
@@ -231,7 +235,7 @@ function buildPromptSection(chosenGenre, numColumns){
         </div>
     `);
 
-};
+}
 
 
 /**

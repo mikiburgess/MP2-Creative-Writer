@@ -217,18 +217,88 @@ function buildPromptSection(chosenGenre, numColumns){
     $("#lower-section").html(`
         <div class="row">
           <div class="col">
-            <button class="btn btn-regenerate site-btn" type="button">I'm not happy. Regenerate</button>
+            <button class="btn btn-regenerate site-btn" type="button">
+                I'm not happy. Regenerate
+            </button>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <button class="btn btn-lets-write site-btn" type="button">I'm happy. Lets write!</button>
+            <button class="btn btn-lets-write site-btn" type="button" onclick="buildWritingSection()">
+                I'm happy. Lets write!
+                </button>
           </div>
         </div>
     `);
 
 };
 
+
+/**
+ * Build and display the writing page.
+ * 
+ * @param {object} prompt Object containing all elements of the generated writing prompt.
+ * @return {type} description.
+ */ 
+function buildWritingSection(){
+    // 1. Add prompt and guidance to upper section
+    // 2. Add writing space to middle section
+    // 3. Add guidance text and email entry to lower section
+    
+    console.log("function called successfully: buildWritingSection()");
+
+    // Add prompt and guidance to upper section
+    $("#upper-section").html(`
+        <div class="row justify-content-center">
+            <div class="col">
+            <p>Your writing prompt: ...</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col">
+            <p>
+                You can take this prompt and use it later, or use the space below now to write your story.
+            </p>
+            </div>
+        </div>
+    `);
+
+    $("#middle-section").html(`
+        <div class="row justify-content-center">
+            <div class="col-8 col-sm-10 writing-area">
+                <textarea class="textarea-writing" rows="5" placeholder="Write your story here ..." aria-label="Editable text area for composing your story"></textarea>
+            </div>
+        </div>
+    `);
+
+    $("#lower-section").html(`
+        <div class="row justify-content-center">
+            <div class="col-8 col-sm-6 ">
+            <p>
+                To save a copy of your writing, enter your email address below 
+                and your story will fly into your inbox ...
+            </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-8 col-sm-10 col-lg-8">
+                <input type="email" class="site-input input-email" placeholder="Your email address" />
+                <button class="btn btn-email site-btn" type="button">Send email</button>
+            </div>
+        </div>
+    `);
+
+}
+
+/**
+ * Send content of writing area to the entered email address.
+ * 
+ * @param {string} emailAddress User-entered email address.
+ * @return {number} Response/Success code.
+ */ 
+function emailPrompt(emailAddress){
+    console.log("function called successfully: emailPrompt(" + emailAddress + ")");
+}
 
 // Starting point - initialise the first stage of the site
 initialiseSite();

@@ -28,17 +28,17 @@ const writingPrompt = {genre: "",
 
 const genreCards = [
 	{id: "adventure", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Adventure", 
-        description: "Text description of the adventure genre"},
+        description: "Dive in and take an exciting adventure into places and situations unknown."},
     {id: "historical", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Historical", 
         description: "Revisit the past and use your imagination to explore alternatives to historical events (global or personal)."},
     {id: "fantasy", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Fantasy", 
         description: "Witches and wizzards. Dragons and goblins. Forests, castles and haunted houses. Where will your imagination take you?"},
     {id: "scary", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Scary", 
-        description: "Text description of the scary genre"},
+        description: "Dare you face your fears? Or would you prefer to create someone else's nightmare? Select this option ... if you dare!"},
     {id: "justwrite", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Just Write!", 
-        description: "Text description of the option"},
+        description: "Can't decide? Want to be surprised? Select this option for a random writing prompt."},
     {id: "experiment", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Experiment", 
-        description: "Text description of the option"}
+        description: "To have full control and create a prompt unrestricted by genre, choose this option."}
 ];
 
 

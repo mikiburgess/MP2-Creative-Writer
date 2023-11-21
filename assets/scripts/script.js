@@ -294,6 +294,7 @@ function buildWritingSection(){
 
 }
 
+
 /**
  * Send content of writing area to the entered email address.
  * 
@@ -303,6 +304,21 @@ function buildWritingSection(){
 function emailPrompt(emailAddress){
     console.log("function called successfully: emailPrompt(" + emailAddress + ")");
 }
+
+
+/**
+ * Display popup asking user to confirm whether they want to restart from the beginning,
+ *  resetting and losing their current prompt.
+ */
+function restartConfirm() {
+    if (window.confirm("Are you sure you want to restart?\n(All data will be lost!)")) {
+        console.log("User confirms they want to restart");
+        initialiseSite();
+    } else {
+        console.log("User says no, they do not want to restart");
+    }
+}
+
 
 // Starting point - initialise the first stage of the site
 initialiseSite();

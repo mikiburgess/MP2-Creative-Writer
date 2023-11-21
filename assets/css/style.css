@@ -6,7 +6,8 @@
 
 /* COLOR PALETTE -------------------------------------------- */
 :root {
-    --palette-pale: #FFE6A7;
+    --palette-pale-opaque: rgba(255, 230, 168, 0.8);
+    --palette-pale: #ffe6a8;
     --palette-chocolate: #99582A;
     --palette-dark: #432818;
     --palette-caramel: #BB9457;
@@ -44,6 +45,15 @@ footer {
 
 #upper-section, #lower-section {
     text-align: center;
+}
+
+#upper-section {
+    margin-bottom: 20px;
+}
+
+#lower-section {
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 
@@ -217,9 +227,13 @@ p.lead{
 .user-prompt {
     position: relative;   
 }
-.scroll {
+
+.scroll { /* Dropshadow learned from https://css-tricks.com/almanac/properties/f/filter/ */
     width: 80vw;
+    filter: drop-shadow(2px 2px 5px rgb(0 0 0 / 0.5));
+    -webkit-filter: drop-shadow(2px 2px 5px rgb(0 0 0 / 0.5));
 }
+
 .text-prompt-genre { /* adapted from https://www.w3schools.com/howto/howto_css_image_text.asp */
     position: absolute;
     top: 50%;
@@ -227,13 +241,14 @@ p.lead{
     transform: translate(-50%, -50%);
     font-size: calc(18px + 1.5vw);
     font-style: italic;
+    text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
 }
 
 
 /* STORY CARDS ---------------------------------------------- */
 
 .genre-card { /* individual genre card */
-    background-color: var(--palette-pale);
+    background-color: var(--palette-pale-opaque);
     border-radius: 15px;
     opacity: 0.9;
 

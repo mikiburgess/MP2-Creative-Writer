@@ -60,9 +60,7 @@ h2, h3, h4, h5 {
     font-weight: 500; 
 }
 
-p,
-
-.site-text, .text-genre-card {
+p, .site-text, .text-genre-card {
     font-family: 'Kalam', cursive;
 }
 
@@ -83,7 +81,10 @@ p.lead{
     margin-bottom: 20px;
 }
 
-.site-footer {}
+.site-footer {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 300;
+}
 .text-prompt-genre {}
 
 .text-prompt {
@@ -102,8 +103,16 @@ p.lead{
     margin-bottom: 20px;
 }
 
+
 .text-writing-guidance {}
 
+
+
+.text-site-general,
+.text-writing-guidance,
+.textarea-writing {
+    width: 95%;
+}
 
 /* BUTTONS -------------------------------------------------- */
 
@@ -213,6 +222,7 @@ p.lead{
     margin-right: 10px;
     /* min-width: 250px; */
     
+    height: 100%;
 }
 
 .col-genre-card { /* container for each genre card */
@@ -236,7 +246,18 @@ p.lead{
 }
 
 
+/* WRITING AREA --------------------------------------------- */
+.writing-area {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 10px; */
+    margin-bottom: 30px;
+}
 
+.textarea-writing {
+    width: 100%;
+    font-family: 'Kalam', cursive;
+}
 
 
 /*  MEDIA QUERIES ------------------------------------------- */
@@ -269,6 +290,11 @@ p.lead{
         line-height: 32px; 
     }
 
+    .text-site-general,
+    .text-writing-guidance,
+    .textarea-writing {
+        width: 80%;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -287,6 +313,12 @@ p.lead{
 @media (min-width: 1200px) {
     body {
         /* background-color:aquamarine; */
+    }
+
+    .text-site-general,
+    .text-writing-guidance,
+    .textarea-writing {
+        width: 75%;
     }
 
 }

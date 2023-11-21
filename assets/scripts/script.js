@@ -31,17 +31,17 @@ const writingPrompt = {genre: "",
 };
 
 const genreCards = [
-	{id: "adventure", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Adventure", 
+	{id: "adventure", image: "ai-generated-hiker.jpg", altText: "Image of a bear", displayName: "Adventure", 
         description: "Dive in and take an exciting adventure into places and situations unknown."},
-    {id: "historical", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Historical", 
+    {id: "historical", image: "castle.jpg", altText: "Image of a bear", displayName: "Historical", 
         description: "Revisit the past and use your imagination to explore alternatives to historical events (global or personal)."},
-    {id: "fantasy", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Fantasy", 
+    {id: "fantasy", image: "floating-home.jpg", altText: "Image of a bear", displayName: "Fantasy", 
         description: "Witches and wizzards. Dragons and goblins. Forests, castles and haunted houses. Where will your imagination take you?"},
-    {id: "scary", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Scary", 
+    {id: "scary", image: "full-moon.jpg", altText: "Image of a bear", displayName: "Scary", 
         description: "Dare you face your fears? Or would you prefer to create someone else's nightmare? Select this option ... if you dare!"},
-    {id: "justwrite", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Just Write!", 
+    {id: "justwrite", image: "ai-generated-library.jpg", altText: "Image of a bear", displayName: "Just Write!", 
         description: "Can't decide? Want to be surprised? Select this option for a random writing prompt."},
-    {id: "experiment", image: "placeholder.jpg", altText: "Image of a bear", displayName: "Experiment", 
+    {id: "experiment", image: "books.jpg", altText: "Image of a bear", displayName: "Experiment", 
         description: "To have full control and create a prompt unrestricted by genre, choose this option."}
 ];
 

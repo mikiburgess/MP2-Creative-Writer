@@ -113,8 +113,13 @@ function refresh(promptData) {
     console.log("function called successfully: refresh(" + promptData + ")");
 }
 
-
+/**
+ * Display selected genre to the user, and update writingPrompt object.
+ * 
+ * @param {string} selectedGenre name of the selected genre.
+ */ 
 function displaySelectedGenre(selectedGenre) {
+    writingPrompt.genre = selectedGenre;
     $(".text-prompt-genre").text(selectedGenre);
 }
 
@@ -132,8 +137,11 @@ function buildGenreCardsSection() {
     console.log("function called successfully: buildGenreCardsSection()");
 
     // Clear previous content from upper section
-    $(".text-writing-guidance").empty();
-    displaySelectedGenre("Test");
+    $("#upper-section").html(`
+        <img src="assets/images/scroll.png" class="scroll"/>
+        <div class="text-prompt-genre"></div>
+    `);
+    displaySelectedGenre("choose a genre ...");
     
     $("#middle-section").html(`
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-center genre-cards">
@@ -150,7 +158,9 @@ function buildGenreCardsSection() {
                   <h5 class="card-title">${genreCards[i].displayName}</h5>
                   <p class="card-text">${genreCards[i].description}</p>
                 </div>
-                <button class="btn btn-genre-card-select site-btn" role="button">Select ${genreCards[i].displayName}!</button>
+                <button class="btn btn-genre-card-select site-btn" role="button" onclick="displaySelectedGenre('${genreCards[i].displayName}')">
+                    Select ${genreCards[i].displayName}!
+                </button>
               </div>
             </div>
         `);
@@ -160,7 +170,7 @@ function buildGenreCardsSection() {
     $("#lower-section").html(`
         <div class="row">
             <div class="col">
-                <button class="btn btn-genre-inspire site-btn" type="button" onClick="buildPromptSection('Adventure', 2)">Inspire me ...</button>
+                <button class="btn btn-genre-inspire site-btn" type="button" onClick="buildPromptSection('${writingPrompt.genre}', 2)">Inspire me ...</button>
              </div>
         </div>
     `);
@@ -186,7 +196,7 @@ function buildPromptSection(chosenGenre, numColumns){
     generatePrompt(chosenGenre);
     
     // Clear previous content from upper section
-    $("#upper-section").empty();
+    // $("#upper-section").empty();
 
     // Max number of columns to be included per row (currently static)
     // var numColumns = 2;

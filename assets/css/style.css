@@ -60,7 +60,7 @@ h2, h3, h4, h5 {
     font-weight: 500; 
 }
 
-p, .site-text, .text-genre-card {
+p, .site-text, .text-genre-card, .text-prompt-genre {
     font-family: 'Kalam', cursive;
 }
 
@@ -85,7 +85,16 @@ p.lead{
     font-family: 'Libre Baskerville', serif;
     font-weight: 300;
 }
-.text-prompt-genre {}
+
+
+.user-prompt {
+
+}
+
+.text-prompt-genre {
+
+}
+
 
 .text-prompt {
     border: var(--palette-caramel);
@@ -201,6 +210,22 @@ p.lead{
     transition: all .2s ease-in-out;
 }
 
+/* USER PROMPT ---------------------------------------------- */
+
+.user-prompt {
+    position: relative;   
+}
+.scroll {
+    width: 80vw;
+}
+.text-prompt-genre { /* adapted from https://www.w3schools.com/howto/howto_css_image_text.asp */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: calc(18px + 2vw);
+    font-style: italic;
+}
 
 
 /* STORY CARDS ---------------------------------------------- */
@@ -271,6 +296,10 @@ p.lead{
         /* background-color:blue; */
     }
     
+    .scroll {
+        width: 60vw;
+    }
+
     .btn-genre-card-select {
         font-size: 15px;
         line-height: 28px;
@@ -285,6 +314,10 @@ p.lead{
         /* background-color:lightskyblue; */
     }
     
+    .scroll {
+        width: 50vw;
+    }
+
     .btn-genre-card-select {
         font-size: 16px;
         line-height: 32px; 
@@ -303,6 +336,10 @@ p.lead{
         /* background-color:aqua; */
     }
 
+    .scroll {
+        width: 45vw;
+    }
+
     .btn-genre-card-select {
         width: 75%;
     }
@@ -313,6 +350,10 @@ p.lead{
 @media (min-width: 1200px) {
     body {
         /* background-color:aquamarine; */
+    }
+
+    .scroll {
+        width: 40vw;
     }
 
     .text-site-general,

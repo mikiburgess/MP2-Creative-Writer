@@ -8,7 +8,7 @@
 /*jshint esversion: 6 */
 
 
-
+const numColumns = 2;
 
 // Details for each of the writing prompt elements
 const promptDetails = [
@@ -52,7 +52,7 @@ const genreCards = [
 function initialiseWritingPrompt(){
     console.log("function called successfully: initialiseWritingPrompt()");
 
-    writingPrompt.genre = "General";
+    writingPrompt.genre = "";
     writingPrompt.heroCharacter = "";
     writingPrompt.heroMood = "";
     writingPrompt.villainCharacter = ""; 
@@ -103,6 +103,21 @@ function generatePrompt(genreData) {
     console.log("function called successfully: generatePrompt(" + genreData + ")");
 } 
 
+/**
+ * Check if genre has been selected.
+ *    if yes - create prompt then build prompt section
+ *    if no - tell user they need to select a genre
+ * 
+ */ 
+function createPrompt() {
+    console.log("function called successfully: createPrompt()");
+    if (writingPrompt.genre) {
+        generatePrompt();
+        buildPromptSection();
+    } else {
+        window.alert("Please make a selection before proceeding")
+    }
+}
 
 /**
  * Generate a new item for the selected promt, according to passed 'genre'.
@@ -119,8 +134,14 @@ function refresh(promptData) {
  * @param {string} selectedGenre name of the selected genre.
  */ 
 function displaySelectedGenre(selectedGenre) {
-    writingPrompt.genre = selectedGenre;
-    $(".text-prompt-genre").text(selectedGenre);
+    if (selectedGenre) {
+        writingPrompt.genre = selectedGenre;
+        $(".text-prompt-genre").text(selectedGenre);
+        console.log("Selected genre = ", selectedGenre);
+    } else {
+        $(".text-prompt-genre").text("chosen genre ...");
+        console.log("No genre selected");
+    }
 }
 
 /**
@@ -141,7 +162,7 @@ function buildGenreCardsSection() {
         <img src="assets/images/scroll.png" class="scroll"/>
         <div class="text-prompt-genre"></div>
     `);
-    displaySelectedGenre("choose a genre ...");
+    displaySelectedGenre();
     
     $("#middle-section").html(`
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 justify-content-center genre-cards">
@@ -170,7 +191,7 @@ function buildGenreCardsSection() {
     $("#lower-section").html(`
         <div class="row">
             <div class="col">
-                <button class="btn btn-genre-inspire site-btn" type="button" onClick="buildPromptSection('${writingPrompt.genre}', 2)">Inspire me ...</button>
+                <button class="btn btn-genre-inspire site-btn" type="button" onClick="createPrompt()">Inspire me ...</button>
              </div>
         </div>
     `);
@@ -183,7 +204,7 @@ function buildGenreCardsSection() {
  * @param {int} numColumns Max number of columns required for the site
  * @return {type} description.
  */ 
-function buildPromptSection(chosenGenre, numColumns){
+function buildPromptSection(){
     // 1. identify/specify required prompts
     // 2. set number of columns (initially static - in future to be dynamic)
     // 3. iterate though each required prompt element
@@ -193,7 +214,7 @@ function buildPromptSection(chosenGenre, numColumns){
     
     console.log("function called successfully: buildPromptSection()");
 
-    generatePrompt(chosenGenre);
+    // generatePrompt(chosenGenre);
     
     // Clear previous content from upper section
     // $("#upper-section").empty();

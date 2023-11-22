@@ -13,9 +13,9 @@ const numColumns = 2;
 // Current writing prompt content
 var writingPrompt = {
         genre: "", 
-        heroCharacter: "", 
+        hero: "", 
         heroMood: "",
-        villainCharacter: "", 
+        villain: "", 
         villainMood: "",
         item: "", 
         setting: "", 
@@ -23,10 +23,10 @@ var writingPrompt = {
         ending: ""
 };
 
-var genres = ["General", "Historical", "Fantasy", "Adventure", "Scary"];
+const genres = ["General", "Historical", "Fantasy", "Adventure", "Scary"];
 
 // Data for the genre selection cards
-var genreCards = [
+const genreCards = [
 	{id: "adventure", image: "ai-generated-hiker.jpg", altText: "Image of a bear", displayName: "Adventure", 
         description: "Dive in and take an exciting adventure into places and situations unknown."},
     {id: "historical", image: "castle.jpg", altText: "Image of a bear", displayName: "Historical", 
@@ -43,9 +43,9 @@ var genreCards = [
 
 // Details for each of the writing prompt elements
 const promptDetails = [
-    {id:"heroCharacter", placeholder: "Hero - character", aria:"Type of character for the hero of the story"},
+    {id:"hero", placeholder: "Hero - character", aria:"Type of character for the hero of the story"},
     {id:"heroMood", placeholder: "Hero - mood", aria:"Mood of the story hero"},
-    {id:"villainCharacter", placeholder: "Villain - character", aria:"Type of character for the villain of the story"},
+    {id:"villain", placeholder: "Villain - character", aria:"Type of character for the villain of the story"},
     {id:"villainMood", placeholder: "Villain - mood", aria:"Mood of the story villian"},
     {id:"obstacle", placeholder: "Obstacle", aria:"The obstacle or challenge facing the hero"},
     {id:"item", placeholder: "Item", aria:"An item to be integrated into the story"},
@@ -56,7 +56,7 @@ const promptDetails = [
 // {name: "", icon: "fa-solid ", emojisym: "", genre: []}
 
 
-var heroes = [
+const heroes = [
     {name: "man", icon: "fa-solid fa-person", emojisym: "128104", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
     {name: "old man", icon: "fa-solid fa-person-cane", emojisym: "128116", genre: ["General", "Historical", "Fantasy", "Adventure"]},
     {name: "woman", icon: "fa-solid fa-person-dress", emojisym: "128105", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
@@ -74,7 +74,7 @@ var heroes = [
     // {name: "superhero", icon: "fa-solid ", emojisym: "129464", genre: []}
 ];
 
-var villains = [
+const villains = [
     {name: "zombie", icon: "fa-solid fa-biohazard", emojisym: "129503", genre: ["Fantasy", "Scary", "General", "Adventure"]},
     {name: "evil squirrel", icon: "fa-solid fa-biohazard", emojisym: "128063", genre: ["Scary"]},
     {name: "cow", icon: "fa-solid fa-cow", emojisym: "128004", genre: ["Fantasy", "General", "Adventure"]},
@@ -103,7 +103,7 @@ var villains = [
     // {name: "supervillan", icon: "fa-solid ", emojisym: "129465", genre: []}
 ];
 
-var moods_hero = [
+const heroMoods = [
     {name: "happy", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure"]},
     {name: "cheerful", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure"]},
     {name: "optimistic", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure"]},
@@ -117,7 +117,7 @@ var moods_hero = [
     {name: "aprehensive", icon: "fa-solid ", emojisym: "", genre: ["General", "Adventure", "Scary"]}
 ];
 
-var moods_villain = [
+const villainMoods = [
     {name: "cheerful", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure"]},
     {name: "optimistic", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
     {name: "pessimistic", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
@@ -127,7 +127,7 @@ var moods_villain = [
     {name: "angry", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]}
 ];
 
-var items = [
+const items = [
     {name: "sword", icon: "fa-solid fa-spoon", emojisym: "128481", genre: ["Historical", "Fantasy", "Adventure"]},
     {name: "shield", icon: "fa-solid fa-shield-halved", emojisym: "", genre: ["Historical", "Fantasy", "Adventure"]},
     {name: "lemon", icon: "fa-solid fa-lemon", emojisym: "127819", genre: ["General", "Fantasy", "Adventure", "Scary"]},
@@ -167,7 +167,7 @@ var items = [
     // {name: "compass", icon: "fa-solid ", emojisym: "129517", genre: ["General"]}
 ];
 
-var settings = [
+const settings = [
     {name: "castle", icon: "fa-solid fa-landmark", emojisym: "127984", genre: ["Fantasy", "Historical", "General"]},
     {name: "factory", icon: "fa-solid fa-industry", emojisym: "", genre: ["Historical", "General"]},
     {name: "campsite", icon: "fa-solid fa-tents", emojisym: "127957", genre: ["General", "Adventure", "Scary"]},
@@ -196,7 +196,7 @@ var settings = [
     // {name: "beach", icon: "fa-solid ", emojisym: "127958", genre: []}
 ];
 
-var obstacles = [
+const obstacles = [
     // {name: "", icon: "fa-solid ", emojisym: "", genre: []}
     {name: "fire ants", icon: "fa-solid ", emojisym: "", genre: ["General", "Fantasy", "Adventure", "Scary"]},
     {name: "lonliness", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
@@ -211,7 +211,7 @@ var obstacles = [
     {name: "lost map", icon: "fa-solid ", emojisym: "", genre: ["Adventure"]}
 ];
 
-var endings = [
+const endings = [
     {name: "happy", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]},
     {name: "sad", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]},
     {name: "surreal", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]},

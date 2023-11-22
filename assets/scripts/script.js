@@ -8,43 +8,6 @@
 /*jshint esversion: 6 */
 
 
-const numColumns = 2;
-
-// Details for each of the writing prompt elements
-const promptDetails = [
-    {id:"heroCharacter", placeholder: "Hero - character", aria:"Type of character for the hero of the story"},
-    {id:"heroMood", placeholder: "Hero - mood", aria:"Mood of the story hero"},
-    {id:"villainCharacter", placeholder: "Villain - character", aria:"Type of character for the villain of the story"},
-    {id:"villainMood", placeholder: "Villain - mood", aria:"Mood of the story villian"},
-    {id:"obstacle", placeholder: "Obstacle", aria:"The obstacle or challenge facing the hero"},
-    {id:"item", placeholder: "Item", aria:"An item to be integrated into the story"},
-    {id:"setting", placeholder: "Setting", aria:"The setting, or scene, for the story"},
-    {id:"ending", placeholder: "Ending", aria:"The type of ending to be aimed for"}
-];
-
-// Current writing prompt content
-const writingPrompt = {genre: "", 
-    heroCharacter: "", heroMood: "",
-    villainCharacter: "", villainMood: "",
-    item: "", setting: "", 
-    obstacle: "", ending: ""
-};
-
-const genreCards = [
-	{id: "adventure", image: "ai-generated-hiker.jpg", altText: "Image of a bear", displayName: "Adventure", 
-        description: "Dive in and take an exciting adventure into places and situations unknown."},
-    {id: "historical", image: "castle.jpg", altText: "Image of a bear", displayName: "Historical", 
-        description: "Revisit the past and use your imagination to explore alternatives to historical events (global or personal)."},
-    {id: "fantasy", image: "floating-home.jpg", altText: "Image of a bear", displayName: "Fantasy", 
-        description: "Witches and wizzards. Dragons and goblins. Forests, castles and haunted houses. Where will your imagination take you?"},
-    {id: "scary", image: "full-moon.jpg", altText: "Image of a bear", displayName: "Scary", 
-        description: "Dare you face your fears? Or would you prefer to create someone else's nightmare? Select this option ... if you dare!"},
-    {id: "justwrite", image: "ai-generated-library.jpg", altText: "Image of a bear", displayName: "Just Write!", 
-        description: "Can't decide? Want to be surprised? Select this option for a random writing prompt."},
-    {id: "experiment", image: "books.jpg", altText: "Image of a bear", displayName: "Experiment", 
-        description: "To have full control and create a prompt unrestricted by genre, choose this option."}
-];
-
 
 /**
  * Initialise a new, empty writing prompt object.
@@ -96,11 +59,55 @@ function initialiseSite(){
 /**
  * Generate a new prompt according to passed 'genre'.
  * 
- * @param {string} genreData the genre that user has selected.
- * @return {object} Populated prompt object.
+ * @return {boolean} Confirm of generation
  */ 
-function generatePrompt(genreData) {
-    console.log("function called successfully: generatePrompt(" + genreData + ")");
+function generatePrompt() {
+    console.log("function called successfully: generatePrompt()");
+
+    try {
+    let storyHeroes = heroes.filter((i) => {
+        return i.genre.includes(writingPrompt.genre);
+    });
+    let storyHeroMoods = heroMoods.filter((i) => {
+        return i.genre.includes(writingPrompt.genre);
+    });
+    let storyVillains = villains.filter((i) => {
+        return i.genre.includes(writingPrompt.genre);
+    });
+    let storyVillainMoods = villainMoods.filter((i) => {
+        return i.genre.includes(writingPrompt.genre);
+    });
+    let storyItems = items.filter((i) => {
+        return i.genre.includes(writingPrompt.genre);
+    });
+    let storyObstacles = obstacles.filter((i) => {
+        return i.genre.includes(writingPrompt.genre);
+    });
+    let storySettings = settings.filter((i) => {
+        return i.genre.includes(writingPrompt.genre);
+    });
+    let storyEndings = endings.filter((i) => {
+        return i.genre.includes(writingPrompt.genre);
+    });
+
+    writingPrompt.hero = storyHeroes[Math.floor(Math.random() * storyHeroes.length)];
+    writingPrompt.villain = storyVillains[Math.floor(Math.random() * storyVillains.length)];
+    writingPrompt.heroMood = storyHeroMoods[Math.floor(Math.random() * storyHeroMoods.length)];
+    writingPrompt.villainMood = storyVillainMoods[Math.floor(Math.random() * storyVillainMoods.length)];
+    writingPrompt.item = storyItems[Math.floor(Math.random() * storyItems.length)];
+    writingPrompt.obstacle = storyObstacles[Math.floor(Math.random() * storyObstacles.length)];
+    writingPrompt.setting = storySettings[Math.floor(Math.random() * storySettings.length)];
+    writingPrompt.ending = storyEndings[Math.floor(Math.random() * storyEndings.length)];
+
+    console.log("Writing prompt is currently: " + Object.values(writingPrompt));
+    return true;
+
+    } catch(err) {
+    console.log("Error generating prompt: " + err);
+    return false;
+    
+    }
+    
 } 
 
 /**
@@ -112,8 +119,10 @@ function generatePrompt(genreData) {
 function createPrompt() {
     console.log("function called successfully: createPrompt()");
     if (writingPrompt.genre) {
-        generatePrompt();
-        buildPromptSection();
+        if (generatePrompt()) {
+            buildPromptSection();
+            populateWritingPromptBoxes();
+        };
     } else {
         window.alert("Please make a selection before proceeding")
     }
@@ -229,7 +238,7 @@ function buildPromptSection(){
     for (let i = 0; i < promptDetails.length; i+= numColumns) {
         let currentHTML = "";
         for (let l=0; l < numColumns; l++) {
-            console.log("Loop: i = " + i + " and l = " + l);
+            // console.log("Loop: i = " + i + " and l = " + l);
             currentHTML += (`
                 <div class="col-8 col-md-4 col-text-prompt">
                     <input type="text" class="form-control text-prompt" id="${promptDetails[i+l].id}" 
@@ -265,7 +274,21 @@ function buildPromptSection(){
           </div>
         </div>
     `);
+}
 
+/**
+ * Add the current prompt to the writing prompt section
+ *   - populates the prompt input boxes
+ */
+function populateWritingPromptBoxes() {
+    $("#hero").val("Hero: " + writingPrompt.hero.name);
+    $("#heroMood").val("Mood: " + writingPrompt.heroMood.name);
+    $("#villain").val("Villain: " + writingPrompt.villain.name);
+    $("#villainMood").val("Mood: " + writingPrompt.villainMood.name);
+    $("#obstacle").val("Obstacle: " + writingPrompt.obstacle.name);
+    $("#item").val("Item: " + writingPrompt.item.name);
+    $("#setting").val("Setting: " + writingPrompt.setting.name);
+    $("#ending").val("Ending: " + writingPrompt.ending.name);
 }
 
 

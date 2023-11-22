@@ -16,7 +16,7 @@ const promptDetails = [
     {id:"heroMood", placeholder: "Hero - mood", aria:"Mood of the story hero"},
     {id:"villainCharacter", placeholder: "Villain - character", aria:"Type of character for the villain of the story"},
     {id:"villainMood", placeholder: "Villain - mood", aria:"Mood of the story villian"},
-    {id:"challenge", placeholder: "Challenge", aria:"The challenge facing the hero"},
+    {id:"obstacle", placeholder: "Obstacle", aria:"The obstacle or challenge facing the hero"},
     {id:"item", placeholder: "Item", aria:"An item to be integrated into the story"},
     {id:"setting", placeholder: "Setting", aria:"The setting, or scene, for the story"},
     {id:"ending", placeholder: "Ending", aria:"The type of ending to be aimed for"}

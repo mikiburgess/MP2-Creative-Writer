@@ -16,9 +16,9 @@ function initialiseWritingPrompt(){
     console.log("function called successfully: initialiseWritingPrompt()");
 
     writingPrompt.genre = "";
-    writingPrompt.heroCharacter = "";
+    writingPrompt.hero = "";
     writingPrompt.heroMood = "";
-    writingPrompt.villainCharacter = ""; 
+    writingPrompt.villain = ""; 
     writingPrompt.villainMood = "";
     writingPrompt.item = "";
     writingPrompt.setting = ""; 
@@ -64,30 +64,37 @@ function initialiseSite(){
 function generatePrompt() {
     console.log("function called successfully: generatePrompt()");
 
+    let chosenGenre = writingPrompt.genre;
+    if (chosenGenre == "Just Write!")  {
+        chosenGenre = "General";
+    } else if (chosenGenre == "Experiment") {
+        chosenGenre = "General";  // Further development - select from any genre
+    }
+
     try {
     let storyHeroes = heroes.filter((i) => {
-        return i.genre.includes(writingPrompt.genre);
+        return i.genre.includes(chosenGenre);
     });
     let storyHeroMoods = heroMoods.filter((i) => {
-        return i.genre.includes(writingPrompt.genre);
+        return i.genre.includes(chosenGenre);
     });
     let storyVillains = villains.filter((i) => {
-        return i.genre.includes(writingPrompt.genre);
+        return i.genre.includes(chosenGenre);
     });
     let storyVillainMoods = villainMoods.filter((i) => {
-        return i.genre.includes(writingPrompt.genre);
+        return i.genre.includes(chosenGenre);
     });
     let storyItems = items.filter((i) => {
-        return i.genre.includes(writingPrompt.genre);
+        return i.genre.includes(chosenGenre);
     });
     let storyObstacles = obstacles.filter((i) => {
-        return i.genre.includes(writingPrompt.genre);
+        return i.genre.includes(chosenGenre);
     });
     let storySettings = settings.filter((i) => {
-        return i.genre.includes(writingPrompt.genre);
+        return i.genre.includes(chosenGenre);
     });
     let storyEndings = endings.filter((i) => {
-        return i.genre.includes(writingPrompt.genre);
+        return i.genre.includes(chosenGenre);
     });
 
     writingPrompt.hero = storyHeroes[Math.floor(Math.random() * storyHeroes.length)];
@@ -118,6 +125,7 @@ function generatePrompt() {
  */ 
 function createPrompt() {
     console.log("function called successfully: createPrompt()");
+
     if (writingPrompt.genre) {
         if (generatePrompt()) {
             buildPromptSection();
@@ -128,6 +136,7 @@ function createPrompt() {
     }
 }
 
+
 /**
  * Generate a new item for the selected promt, according to passed 'genre'.
  * 
@@ -135,14 +144,113 @@ function createPrompt() {
  */ 
 function refresh(promptData) {
     console.log("function called successfully: refresh(" + promptData + ")");
+
+    let chosenGenre = writingPrompt.genre;
+    if (chosenGenre == "Just Write!")  {
+        chosenGenre = "General";
+    } else if (chosenGenre == "Experiment") {
+        chosenGenre = "General";  // Further development - select from any genre
+    }
+
+    if (promptData == '') {
+        createPrompt();
+        populateWritingPromptBoxes();
+    } else {
+        switch(promptData) {
+            case 'hero': {
+                console.log ("Hero selected");
+
+                let storyElements = heroes.filter((i) => {
+                    return i.genre.includes(chosenGenre);
+                });
+                writingPrompt.hero = storyElements[Math.floor(Math.random() * storyElements.length)];
+                $("#hero").val("Hero: " + writingPrompt.hero.name);
+                break;
+            } 
+            case 'heroMood': {
+                console.log ("Hero Mood selected");
+
+                let storyElements = heroMoods.filter((i) => {
+                    return i.genre.includes(chosenGenre);
+                });
+                writingPrompt.heroMood = storyElements[Math.floor(Math.random() * storyElements.length)];
+                $("#heroMood").val("Hero's Mood: " + writingPrompt.heroMood.name);
+                break;
+            } 
+            case 'villain': {
+                console.log ("Villain selected");
+
+                let storyElements = villains.filter((i) => {
+                    return i.genre.includes(chosenGenre);
+                });
+                writingPrompt.villain = storyElements[Math.floor(Math.random() * storyElements.length)];
+                $("#villain").val("Villain: " + writingPrompt.villain.name);
+                break;
+            } 
+            case 'villainMood': {
+                console.log ("Villain Mood selected");
+                
+                let storyElements = villainMoods.filter((i) => {
+                    return i.genre.includes(chosenGenre);
+                });
+                writingPrompt.villainMood = storyElements[Math.floor(Math.random() * storyElements.length)];
+                $("#villainMood").val("Villain's Mood: " + writingPrompt.villainMood.name);
+                break;
+            } 
+            case 'item': {
+                console.log ("Item selected");
+
+                let storyElements = items.filter((i) => {
+                    return i.genre.includes(chosenGenre);
+                });
+                writingPrompt.item = storyElements[Math.floor(Math.random() * storyElements.length)];
+                $("#item").val("Item: " + writingPrompt.item.name);
+                break;
+            } 
+            case 'setting': {
+                console.log ("Setting selected");
+
+                let storyElements = settings.filter((i) => {
+                    return i.genre.includes(chosenGenre);
+                });
+                writingPrompt.setting = storyElements[Math.floor(Math.random() * storyElements.length)];
+                $("#setting").val("Setting: " + writingPrompt.setting.name);
+                break;
+            } 
+            case 'obstacle': {
+                console.log ("Obstacle selected");
+
+                let storyElements = obstacles.filter((i) => {
+                    return i.genre.includes(chosenGenre);
+                });
+                writingPrompt.obstacle = storyElements[Math.floor(Math.random() * storyElements.length)];
+                $("#obstacle").val("Obstacle: " + writingPrompt.obstacle.name);
+                break;
+            } 
+            case 'ending': {
+                console.log ("Ending selected");
+
+                let storyElements = endings.filter((i) => {
+                    return i.genre.includes(chosenGenre);
+                });
+                writingPrompt.ending = storyElements[Math.floor(Math.random() * storyElements.length)];
+                $("#ending").val("Ending: " + writingPrompt.ending.name);
+                break;
+            } 
+            default:
+                console.log ("Unknown entry: " + promptData);
+        }
+        
+    } 
 }
 
 /**
  * Display selected genre to the user, and update writingPrompt object.
  * 
- * @param {string} selectedGenre name of the selected genre.
+ * @param {string} selectedGenre dirplay name of the selected genre.
  */ 
 function displaySelectedGenre(selectedGenre) {
+    console.log("function called successfully: displaySelectedGenre()");
     if (selectedGenre) {
         writingPrompt.genre = selectedGenre;
         $(".text-prompt-genre").text(selectedGenre);
@@ -261,7 +369,7 @@ function buildPromptSection(){
     $("#lower-section").html(`
         <div class="row">
           <div class="col">
-            <button class="btn btn-regenerate site-btn" type="button">
+            <button class="btn btn-regenerate site-btn" type="button" onclick="refresh('')">
                 I'm not happy. Regenerate
             </button>
           </div>
@@ -276,15 +384,16 @@ function buildPromptSection(){
     `);
 }
 
+
 /**
  * Add the current prompt to the writing prompt section
  *   - populates the prompt input boxes
  */
 function populateWritingPromptBoxes() {
     $("#hero").val("Hero: " + writingPrompt.hero.name);
-    $("#heroMood").val("Mood: " + writingPrompt.heroMood.name);
+    $("#heroMood").val("Hero's Mood: " + writingPrompt.heroMood.name);
     $("#villain").val("Villain: " + writingPrompt.villain.name);
-    $("#villainMood").val("Mood: " + writingPrompt.villainMood.name);
+    $("#villainMood").val("Villain's Mood: " + writingPrompt.villainMood.name);
     $("#obstacle").val("Obstacle: " + writingPrompt.obstacle.name);
     $("#item").val("Item: " + writingPrompt.item.name);
     $("#setting").val("Setting: " + writingPrompt.setting.name);
@@ -305,11 +414,23 @@ function buildWritingSection(){
     
     console.log("function called successfully: buildWritingSection()");
 
+    let promptText = 
+        "<br>Genre: " + writingPrompt.genre +
+        ";<br>Hero: " + writingPrompt.hero.name +
+        "; Hero's Mood: " + writingPrompt.heroMood.name +
+        ";<br>Villain: " + writingPrompt.villain.name +
+        "; Villain's Mood: " + writingPrompt.villainMood.name +
+        ";<br>Item: " + writingPrompt.item.name +
+        "; Setting: " + writingPrompt.setting.name +
+        ";<br>Obstacle: " + writingPrompt.obstacle.name +
+        "; Ending: " + writingPrompt.ending.name;
+
     // Add prompt and guidance to upper section
     $("#upper-section").html(`
         <div class="row justify-content-center">
             <div class="col">
-            <p>Your writing prompt: ...</p>
+            <p>Your writing prompt: ...
+            ${promptText}</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -341,7 +462,7 @@ function buildWritingSection(){
         <div class="row justify-content-center">
             <div class="col-8 col-sm-10 col-lg-8">
                 <input type="email" class="site-input input-email" placeholder="Your email address" />
-                <button class="btn btn-email site-btn" type="button">Send email</button>
+                <button class="btn btn-email site-btn" type="button" onclick="sendEmail()">Send email</button>
             </div>
         </div>
     `);
@@ -355,8 +476,8 @@ function buildWritingSection(){
  * @param {string} emailAddress User-entered email address.
  * @return {number} Response/Success code.
  */ 
-function emailPrompt(emailAddress){
-    console.log("function called successfully: emailPrompt(" + emailAddress + ")");
+function sendEmail(emailAddress){
+    console.log("function called successfully: sendEmail(" + emailAddress + ")");
 }
 
 

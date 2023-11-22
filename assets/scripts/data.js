@@ -8,7 +8,9 @@
 
 /*jshint esversion: 6 */
 
+// Maximum number of columns for displaying the writing prompt
 const numColumns = 2;
+
 
 // Current writing prompt content
 var writingPrompt = {
@@ -23,7 +25,10 @@ var writingPrompt = {
         ending: ""
 };
 
+
+// All available genres (to be used in future development)
 const genres = ["General", "Historical", "Fantasy", "Adventure", "Scary"];
+
 
 // Data for the genre selection cards
 const genreCards = [
@@ -41,6 +46,7 @@ const genreCards = [
         description: "To have full control and create a prompt unrestricted by genre, choose this option."}
 ];
 
+
 // Details for each of the writing prompt elements
 const promptDetails = [
     {id:"hero", placeholder: "Hero - character", aria:"Type of character for the hero of the story"},
@@ -53,7 +59,15 @@ const promptDetails = [
     {id:"ending", placeholder: "Ending", aria:"The type of ending to be aimed for"}
 ];
 
-// {name: "", icon: "fa-solid ", emojisym: "", genre: []}
+
+/** PROMPT DATA
+ * 
+ * Data structure: {name: "", icon: "fa-solid ", emojisym: "", genre: []}
+ * To use FontAwesome icons: <i class="icon"></i>
+ *     eg  <i class="fa-solid fa-person"></i>
+ * To use emojis: &#emojisym;   
+ *     eg,   &#128540;
+*/
 
 
 const heroes = [

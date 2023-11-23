@@ -178,7 +178,10 @@ p.lead{
 .btn-regenerate,
 .btn-lets-write,
 .btn-genre-inspire,
-.btn-email {}
+
+.btn-email {
+    
+}
 
 
 
@@ -299,8 +302,18 @@ p.lead{
 .textarea-writing {
     width: 100%;
     font-family: 'Kalam', cursive;
+    font-weight: 300;
 }
 
+.writing-form {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.input-email {
+    width: 100%;
+    max-width: 350px;
+}
 
 /*  MEDIA QUERIES ------------------------------------------- */
 

@@ -522,15 +522,9 @@ function sendEmail(){
     
     let emailSuccess = emailWriting($("#input-email").val(), writingPrompt, $("textarea").val())
 
-    if (emailSuccess) {
-        $(".user-notification").html(`
-            SUCCESS! Email sent to ${address}
-        `)
-    } else {
-        $(".user-notification").html(`
-            ERROR! Email not sent to ${address}
-        `)
-    }
+    $(".user-notification").html(`
+        ACTION COMPLETE! Please check your email (${address})
+    `);
 
     return false; // To block from loading a new page
 }

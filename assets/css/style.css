@@ -11,6 +11,7 @@
     --palette-chocolate: #99582A;
     --palette-dark: #432818;
     --palette-caramel: #BB9457;
+    --palette-caramel-opaque: rgba(186, 149, 89, 0.5);
     --palette-rich: #6F1D1B;
 }
 
@@ -305,14 +306,23 @@ p.lead{
     font-weight: 300;
 }
 
-.writing-form {
+.writing-form-container {
     margin: 0 auto;
     text-align: center;
 }
 
-.input-email {
+#input-email {
     width: 100%;
     max-width: 350px;
+}
+
+.displayed-prompt,
+.user-notification {
+    background-color: var(--palette-caramel-opaque);
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 10px;
 }
 
 /*  MEDIA QUERIES ------------------------------------------- */

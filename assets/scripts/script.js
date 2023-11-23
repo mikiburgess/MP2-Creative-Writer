@@ -413,7 +413,7 @@ function buildWritingSection(){
     console.log("function called successfully: buildWritingSection()");
 
     let promptText = 
-        "<br>Genre: " + writingPrompt.genre +
+        "Genre: " + writingPrompt.genre +
         ";<br>Hero: " + writingPrompt.hero.name +
         "; Hero's Mood: " + writingPrompt.heroMood.name +
         ";<br>Villain: " + writingPrompt.villain.name +
@@ -427,8 +427,8 @@ function buildWritingSection(){
     $("#upper-section").html(`
         <div class="row justify-content-center">
             <div class="col-8 ">
-            <p>Your writing prompt: ...
-            ${promptText}</p>
+            <p>Your writing prompt: ...</p>
+            <p class="displayed-prompt">${promptText}</p>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -441,13 +441,13 @@ function buildWritingSection(){
     `);
 
     $("#middle-section").html(`
-    <div class="writing-form">
-      <form onsubmit="">
+    <div class="writing-form-container">
+        <!-- <form onsubmit=""> -->
+        <form id="writing-form" onsubmit="return false;">
         <div class="row justify-content-center">
             <div class="col writing-area">
-                <textarea class="textarea-writing" rows="5" placeholder="Write your story here ..." 
-                    aria-label="Editable text area for composing your story">
-                </textarea>
+                <textarea class="textarea-writing" rows="10" placeholder="Write your story here ..." 
+                aria-label="Editable text area for composing your story"></textarea>
             </div>
         </div>
       
@@ -461,33 +461,54 @@ function buildWritingSection(){
         </div>
         <div class="row justify-content-center">
             <div class="col-auto my-auto">
-                <input type="email" class="site-input input-email form-control" 
+                <input type="email" class="site-input form-control" id="input-email"
                     placeholder="Your email address" required/>
             </div>
             <div class="col-auto">
-                <button class="btn btn-email site-btn" type="button" onclick="sendEmail()">Send email</button>
+                <button class="btn site-btn" id="btn-email" type="submit">
+                    Send email
+                </button>
             </div>
         </div>
-      </form>
-    </div>
+       <!-- </form> -->
+       </form>
+      </div>
     `);
 
     $("#lower-section").empty();
-
+    
+    document.getElementById("writing-form").addEventListener("submit", sendEmail);
+    
 }
 
 
 /**
  * Send content of writing area to the entered email address.
  * 
- * @param {string} emailAddress User-entered email address.
  * @return {number} Response/Success code.
  */ 
-function sendEmail(formData){
-    console.log("function called successfully: sendEmail(" + emailAddress + ")");
+function sendEmail(){
+    // console.log("function called successfully: sendEmail(" + this.email + ")");
+    console.log("function called successfully: sendEmail()");
+    
     // get data from form
     // send email
     // add information to lower section of page (confirmation or issue)
+
+    let address = $("#input-email").val();
+
+    console.log("Email address: " + $("#input-email").val());
+    console.log("Message: " + $("textarea").val());
+
+    $("#lower-section").html(`
+        <div class="row justify-content-center">
+          <div class="col-8 col-md-6 col-lg-4">
+            <p class="user-notification">
+                SUCCESS! Email sent to ${address}
+            </p>
+          </div>
+        </div>
+    `);
 }
 
 

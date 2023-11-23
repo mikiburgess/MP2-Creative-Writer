@@ -404,8 +404,6 @@ function populateWritingPromptBoxes() {
 /**
  * Build and display the writing page.
  * 
- * @param {object} prompt Object containing all elements of the generated writing prompt.
- * @return {type} description.
  */ 
 function buildWritingSection(){
     // 1. Add prompt and guidance to upper section
@@ -428,13 +426,13 @@ function buildWritingSection(){
     // Add prompt and guidance to upper section
     $("#upper-section").html(`
         <div class="row justify-content-center">
-            <div class="col">
+            <div class="col-8 ">
             <p>Your writing prompt: ...
             ${promptText}</p>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col">
+            <div class="col-8">
             <p>
                 You can take this prompt and use it later, or use the space below now to write your story.
             </p>
@@ -443,29 +441,38 @@ function buildWritingSection(){
     `);
 
     $("#middle-section").html(`
+    <div class="writing-form">
+      <form onsubmit="">
         <div class="row justify-content-center">
-            <div class="col-8 col-sm-10 writing-area">
-                <textarea class="textarea-writing" rows="5" placeholder="Write your story here ..." aria-label="Editable text area for composing your story"></textarea>
+            <div class="col writing-area">
+                <textarea class="textarea-writing" rows="5" placeholder="Write your story here ..." 
+                    aria-label="Editable text area for composing your story">
+                </textarea>
             </div>
         </div>
-    `);
-
-    $("#lower-section").html(`
+      
         <div class="row justify-content-center">
-            <div class="col-8 col-sm-6 ">
-            <p>
+            <div class="col-8 col-sm-10">
+                <p >
                 To save a copy of your writing, enter your email address below 
                 and your story will fly into your inbox ...
-            </p>
+                </p>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-8 col-sm-10 col-lg-8">
-                <input type="email" class="site-input input-email" placeholder="Your email address" />
+            <div class="col-auto my-auto">
+                <input type="email" class="site-input input-email form-control" 
+                    placeholder="Your email address" required/>
+            </div>
+            <div class="col-auto">
                 <button class="btn btn-email site-btn" type="button" onclick="sendEmail()">Send email</button>
             </div>
         </div>
+      </form>
+    </div>
     `);
+
+    $("#lower-section").empty();
 
 }
 
@@ -476,8 +483,11 @@ function buildWritingSection(){
  * @param {string} emailAddress User-entered email address.
  * @return {number} Response/Success code.
  */ 
-function sendEmail(emailAddress){
+function sendEmail(formData){
     console.log("function called successfully: sendEmail(" + emailAddress + ")");
+    // get data from form
+    // send email
+    // add information to lower section of page (confirmation or issue)
 }
 
 

@@ -413,15 +413,15 @@ function buildWritingSection(){
     console.log("function called successfully: buildWritingSection()");
 
     let promptText = 
-        "Genre: " + writingPrompt.genre +
-        ";<br>Hero: " + writingPrompt.hero.name +
-        "; Hero's Mood: " + writingPrompt.heroMood.name +
-        ";<br>Villain: " + writingPrompt.villain.name +
-        "; Villain's Mood: " + writingPrompt.villainMood.name +
-        ";<br>Item: " + writingPrompt.item.name +
-        "; Setting: " + writingPrompt.setting.name +
-        ";<br>Obstacle: " + writingPrompt.obstacle.name +
-        "; Ending: " + writingPrompt.ending.name;
+        "GENRE: " + writingPrompt.genre +
+        ";<br>HERO: " + writingPrompt.hero.name +
+        "; HERO'S MOOD: " + writingPrompt.heroMood.name +
+        ";<br>VILLAIN: " + writingPrompt.villain.name +
+        "; VILLAIN'S MOOD: " + writingPrompt.villainMood.name +
+        ";<br>ITEM: " + writingPrompt.item.name +
+        "; SETTING: " + writingPrompt.setting.name +
+        ";<br>OBSTACLE: " + writingPrompt.obstacle.name +
+        "; ENDING: " + writingPrompt.ending.name;
 
     // Add prompt and guidance to upper section
     $("#upper-section").html(`
@@ -485,7 +485,6 @@ function buildWritingSection(){
 /**
  * Send content of writing area to the entered email address.
  * 
- * @return {number} Response/Success code.
  */ 
 function sendEmail(){
     // console.log("function called successfully: sendEmail(" + this.email + ")");
@@ -500,15 +499,40 @@ function sendEmail(){
     console.log("Email address: " + $("#input-email").val());
     console.log("Message: " + $("textarea").val());
 
+    
+
     $("#lower-section").html(`
         <div class="row justify-content-center">
           <div class="col-8 col-md-6 col-lg-4">
             <p class="user-notification">
-                SUCCESS! Email sent to ${address}
             </p>
           </div>
         </div>
     `);
+
+    let promptText = "GENRE: " + writingPrompt.genre +
+    "; HERO: " + writingPrompt.hero.name +
+    "; HERO'S MOOD: " + writingPrompt.heroMood.name +
+    "; VILLAIN: " + writingPrompt.villain.name +
+    "; VILLAIN'S MOOD: " + writingPrompt.villainMood.name +
+    "; ITEM: " + writingPrompt.item.name +
+    "; SETTING: " + writingPrompt.setting.name +
+    "; OBSTACLE: " + writingPrompt.obstacle.name +
+    "; ENDING: " + writingPrompt.ending.name;
+    
+    let emailSuccess = emailWriting($("#input-email").val(), writingPrompt, $("textarea").val())
+
+    if (emailSuccess) {
+        $(".user-notification").html(`
+            SUCCESS! Email sent to ${address}
+        `)
+    } else {
+        $(".user-notification").html(`
+            ERROR! Email not sent to ${address}
+        `)
+    }
+
+    return false; // To block from loading a new page
 }
 
 

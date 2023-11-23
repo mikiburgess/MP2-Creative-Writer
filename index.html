@@ -74,9 +74,18 @@
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="assets/scripts/data.js"></script>
-    <script src="assets/scripts/script.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/data.js"></script>
+    <script type="text/javascript" src="assets/scripts/script.js"></script>
+    <script type="text/javascript" src="assets/scripts/sendMail.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("UbidqPF9pvgQ5Cf-j");
+        })();
+    </script>
 
 </body>
 </html>

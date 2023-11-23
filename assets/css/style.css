@@ -280,7 +280,7 @@ p.lead{
 .genre-cards { /* container for all genre cards */
     margin-top: 10px;
     margin-bottom: 10px;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .img-genre-card {

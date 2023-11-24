@@ -33,13 +33,18 @@ body {
     background-size: cover;
     background-attachment: fixed;
     /* align-items: center; */
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 3rem;
 }
 
 footer {
     /* background-color:burlywood; */
+    position: absolute;
+    bottom: 0;
+    height: 3rem;
     width: 100%;
-    text-align: center;
-    min-height: 35px;
+    text-align: left;
     margin: 0;
 }
 
@@ -96,8 +101,16 @@ p.lead{
 .site-footer {
     font-family: 'Libre Baskerville', serif;
     font-weight: 300;
+    font-size: x-small;
 }
 
+.acknowledgements {
+    font-size: xx-small;
+}
+
+.btn-restart {
+
+}
 
 .user-prompt {
 

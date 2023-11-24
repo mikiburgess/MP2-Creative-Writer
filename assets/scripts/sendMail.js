@@ -16,7 +16,7 @@
  * @param {writing}
  */ 
 
-function emailWriting(address, prompt, writing ) {
+function emailWriting(address, writingPrompt, writing ) {
     
     console.log("function called successfully: emailWriting()");
 

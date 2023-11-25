@@ -11,7 +11,7 @@
     --palette-chocolate: #99582A;
     --palette-dark: #432818;
     --palette-caramel: #BB9457;
-    --palette-caramel-opaque: rgba(186, 149, 89, 0.5);
+    --palette-caramel-opaque: rgba(186, 149, 89, 0.25);
     --palette-rich: #6F1D1B;
 }
 
@@ -104,22 +104,9 @@ p.lead{
     font-size: x-small;
 }
 
-.acknowledgements {
-    font-size: xx-small;
-}
-
 .btn-restart {
-
+    font-family: 'Charm', cursive;
 }
-
-.user-prompt {
-
-}
-
-.text-prompt-genre {
-
-}
-
 
 .text-prompt {
     border: var(--palette-caramel);
@@ -140,7 +127,16 @@ p.lead{
 
 .text-writing-guidance {}
 
-
+.displayed-prompt,
+.user-notification,
+.site-introduction {
+    background-color: var(--palette-caramel-opaque);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 10px;
+}
 
 .text-site-general,
 .text-writing-guidance,

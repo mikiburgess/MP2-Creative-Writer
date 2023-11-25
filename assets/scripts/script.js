@@ -35,12 +35,23 @@ function initialiseSite(){
     console.log("function called successfully: initialiseSite()");
 
     $("#upper-section").html(`
-        <div class="site-text text-writing-guidance">
-            Insert - text to welcome vititors to the site.
-            <br>
-            Insert - guidance how to use the site.
-        </div>
-        <div class="site-text text-prompt-genre">
+        <div class="row justify-content-center">
+          <div class="col-11 col-md-8 col-xl-6 site-text site-introduction">
+            <p > 
+                Welcome to The Creative Writer! Your passport to creativity. Your trusty companion to imaginative brilliance. 
+            </p>
+            <p> 
+                From fantasy sagas to heartwarming tales, The Creative Writer is here to spark your imagination and 
+                banish writer's block. 
+            </p>
+            <p>
+                Click below to dive into a world of endless possibilities, unleashing your storytelling potential and 
+                jumpstarting your next literary adventure.
+            </p>
+            <p>
+                Ready, set, create!
+            </p>
+          </div>
         </div>
     `);
 
@@ -426,13 +437,13 @@ function buildWritingSection(){
     // Add prompt and guidance to upper section
     $("#upper-section").html(`
         <div class="row justify-content-center">
-            <div class="col-8 ">
+            <div class="col-11 col-sm-10 col-md-8 col-lg-6 col-xxl-5">
             <p>Your writing prompt: ...</p>
             <p class="displayed-prompt">${promptText}</p>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-8">
+            <div class="col-10">
             <p>
                 You can take this prompt and use it later, or use the space below now to write your story.
             </p>

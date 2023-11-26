@@ -8,9 +8,12 @@
 
 /*jshint esversion: 6 */
 
+
 // Maximum number of columns for displaying the writing prompt
 const numColumns = 2;
 
+// All available genres (to be used in future development)
+const genres = ["General", "Historical", "Fantasy", "Adventure", "Scary"];
 
 // Current writing prompt content
 var writingPrompt = {
@@ -24,11 +27,6 @@ var writingPrompt = {
         obstacle: "", 
         ending: ""
 };
-
-
-// All available genres (to be used in future development)
-const genres = ["General", "Historical", "Fantasy", "Adventure", "Scary"];
-
 
 // Data for the genre selection cards
 const genreCards = [
@@ -45,7 +43,6 @@ const genreCards = [
     {id: "experiment", image: "books.jpg", altText: "Sketch of a pile of books, a pocketwatch, penknife and a pipe.", 
         displayName: "Experiment", description: "To have full control and create a prompt unrestricted by genre, choose this option."}
 ];
-
 
 // Details for each of the writing prompt elements
 const promptDetails = [
@@ -67,6 +64,8 @@ const promptDetails = [
  *     eg  <i class="fa-solid fa-person"></i>
  * To use emojis: &#emojisym;   
  *     eg,   &#128540;
+ * 
+ * NOTE: Icons and emojis planned for use in future development
 */
 
 
@@ -85,7 +84,9 @@ const heroes = [
     {name: "cat", icon: "fa-solid fa-cat", emojisym: "128049", genre: ["General", "Adventure", "Fantasy"]},
     {name: "dog", icon: "fa-solid fa-dog", emojisym: "", genre: ["General", "Adventure", "Fantasy"]},
     {name: "astronaut", icon: "fa-solid fa-user-astronaut", emojisym: "128054", genre: ["Fantasy", "Adventure", "General"]},
-    // {name: "superhero", icon: "fa-solid ", emojisym: "129464", genre: []}
+    {name: "superhero", icon: "fa-solid fa-person", emojisym: "129464", genre: ["General", "Fantasy", "Adventure"]},
+    {name: "explorer", icon: "fa-solid fa-person", emojisym: "128104", genre: ["General", "Historical", "Fantasy", "Adventure"]},
+    {name: "time-traveller", icon: "fa-solid fa-person", emojisym: "128104", genre: ["General", "Historical", "Fantasy"]}
 ];
 
 const villains = [
@@ -108,37 +109,42 @@ const villains = [
     {name: "monk", icon: "fa-solid fa-person", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
     {name: "dragon", icon: "fa-solid fa-dragon", emojisym: "128050", genre: ["Fantasy", "Scary"]},
     {name: "hippo", icon: "fa-solid fa-hippo", emojisym: "129435", genre: ["General", "Fantasy", "Adventure"]},
-    // {name: "robot", icon: "fa-solid ", emojisym: "129302", genre: []},
-    // {name: "t-rex", icon: "fa-solid ", emojisym: "129430", genre: []},
-    // {name: "badger", icon: "fa-solid ", emojisym: "129441", genre: []},
-    // {name: "witch", icon: "fa-solid ", emojisym: "129497", genre: []},
-    // {name: "vampire", icon: "fa-solid ", emojisym: "129499", genre: []},
-    // {name: "virus", icon: "fa-solid ", emojisym: "129440", genre: []},
-    // {name: "supervillan", icon: "fa-solid ", emojisym: "129465", genre: []}
+    {name: "otter", icon: "fa-solid fa-otter", emojisym: "129446", genre: ["General", "Adventure"]},
+    {name: "robot", icon: "fa-solid fa-circle-exclamation", emojisym: "129302", genre: ["General", "Fantasy"]},
+    {name: "t-rex", icon: "fa-solid fa-circle-exclamation", emojisym: "129430", genre: ["General", "Fantasy", "Scary"]},
+    {name: "badger", icon: "fa-solid fa-circle-exclamation", emojisym: "129441", genre: ["General", "Adventure"]},
+    {name: "witch", icon: "fa-solid fa-circle-exclamation", emojisym: "129497", genre: ["Fantasy"]},
+    {name: "vampire", icon: "fa-solid fa-circle-exclamation", emojisym: "129499", genre: ["Fantasy", "Scary"]},
+    {name: "virus", icon: "fa-solid fa-virus", emojisym: "129440", genre: ["General", "Scary"]},
+    {name: "supervillan", icon: "fa-solid fa-circle-exclamation", emojisym: "129465", genre: ["General", "Fantasy", "Adventure"]},
+    {name: "minotaur", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["Fantasy"]},
+    {name: "goblin", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["Fantasy"]},
+    {name: "darlek", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["General", "Fantasy", "Adventure", "scary"]}
 ];
 
 const heroMoods = [
-    {name: "happy", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure"]},
-    {name: "cheerful", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure"]},
-    {name: "optimistic", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure"]},
-    {name: "pessimistic", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
-    {name: "sad", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure"]},
-    {name: "excited", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure"]},
-    {name: "melancholic", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy"]},
-    {name: "pensive", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy"]},
-    {name: "scared", icon: "fa-solid ", emojisym: "", genre: ["General", "Scary"]},
-    {name: "frightened", icon: "fa-solid ", emojisym: "", genre: ["General", "Scary"]},
-    {name: "aprehensive", icon: "fa-solid ", emojisym: "", genre: ["General", "Adventure", "Scary"]}
+    {name: "happy", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy", "Adventure"]},
+    {name: "cheerful", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy", "Adventure"]},
+    {name: "optimistic", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy", "Adventure"]},
+    {name: "pessimistic", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
+    {name: "sad", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy", "Adventure"]},
+    {name: "excited", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy", "Adventure"]},
+    {name: "melancholic", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy"]},
+    {name: "pensive", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy"]},
+    {name: "scared", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Scary"]},
+    {name: "frightened", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Scary"]},
+    {name: "apprehensive", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Adventure", "Scary"]}
 ];
 
 const villainMoods = [
-    {name: "cheerful", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure"]},
-    {name: "optimistic", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
-    {name: "pessimistic", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
-    {name: "mischevious", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure"]},
-    {name: "wicked", icon: "fa-solid ", emojisym: "", genre: ["General", "Fantasy"]},
-    {name: "vengeful", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
-    {name: "angry", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]}
+    {name: "cheerful", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy", "Adventure"]},
+    {name: "optimistic", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
+    {name: "pessimistic", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
+    {name: "mischevious", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy", "Adventure"]},
+    {name: "wicked", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Fantasy"]},
+    {name: "vengeful", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
+    {name: "angry", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
+    {name: "annoyed", icon: "fa-solid fa-brain", emojisym: "129504", genre: ["General", "Historical", "Fantasy", "Adventure"]}
 ];
 
 const items = [
@@ -173,12 +179,12 @@ const items = [
     {name: "camera", icon: "fa-solid fa-camera-retro", emojisym: "", genre: ["General", "Adventure", "Scary"]},
     {name: "photograph", icon: "fa-solid fa-image", emojisym: "", genre: ["General", "Historical", "Adventure", "Scary"]},
     {name: "bicycle", icon: "fa-solid fa-bicycle", emojisym: "", genre: ["General", "Adventure"]},
-    {name: "briefcase", icon: "fa-solid fa-briefcase", emojisym: "128188", genre: ["General", "Adventure", "Scary"]}
-    // {name: "key", icon: "fa-solid ", emojisym: "128273", genre: ["General", "Adventure", "Scary"]},
-    // {name: "key", icon: "fa-solid ", emojisym: "128477", genre: ["Fantasy", "Historical", "Adventure", "Scary"]},
-    // {name: "torch", icon: "fa-solid ", emojisym: "128294", genre: ["General"]},
-    // {name: "fire extinguisher", icon: "fa-solid ", emojisym: "129519", genre: ["General"]},
-    // {name: "compass", icon: "fa-solid ", emojisym: "129517", genre: ["General"]}
+    {name: "briefcase", icon: "fa-solid fa-briefcase", emojisym: "128188", genre: ["General", "Adventure", "Scary"]},
+    {name: "key", icon: "fa-solid fa-key", emojisym: "128273", genre: ["General", "Adventure", "Scary"]},
+    {name: "key", icon: "fa-solid fa-key", emojisym: "128477", genre: ["Fantasy", "Historical", "Adventure", "Scary"]},
+    {name: "torch", icon: "fa-solid fa-circle-exclamation", emojisym: "128294", genre: ["General"]},
+    {name: "fire extinguisher", icon: "fa-solid fa-fire-extinguisher", emojisym: "129519", genre: ["General"]},
+    {name: "compass", icon: "fa-solid fa-compass", emojisym: "129517", genre: ["General"]}
 ];
 
 const settings = [
@@ -204,31 +210,38 @@ const settings = [
     {name: "cable-car", icon: "fa-solid fa-cable-car", emojisym: "", genre: ["Adventure", "Scary"]},
     {name: "volcano", icon: "fa-solid fa-volcano", emojisym: "127755", genre: ["Adventure", "General", "Scary"]},
     {name: "spaceship", icon: "fa-solid fa-rocket", emojisym: "", genre: ["Adventure", "General", "Scary"]},
-    // {name: "house", icon: "fa-solid ", emojisym: "127968", genre: []},
-    // {name: "hotel", icon: "fa-solid ", emojisym: "127980", genre: []},
-    // {name: "church", icon: "fa-solid ", emojisym: "9962", genre: []},
-    // {name: "beach", icon: "fa-solid ", emojisym: "127958", genre: []}
+    {name: "house", icon: "fa-solid fa-house", emojisym: "127968", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
+    {name: "hotel", icon: "fa-solid fa-hotel", emojisym: "127980", genre: ["General", "Adventure", "Scary"]},
+    {name: "church", icon: "fa-solid fa-church", emojisym: "9962", genre: ["General", "Historical", "Scary"]},
+    {name: "beach", icon: "fa-solid fa-umbrella-beach", emojisym: "127958", genre: ["General", "Adventure"]}
 ];
 
 const obstacles = [
-    // {name: "", icon: "fa-solid ", emojisym: "", genre: []}
-    {name: "fire ants", icon: "fa-solid ", emojisym: "", genre: ["General", "Fantasy", "Adventure", "Scary"]},
-    {name: "lonliness", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
-    {name: "swamp", icon: "fa-solid ", emojisym: "", genre: ["Fantasy", "Adventure", "Scary"]},
-    {name: "confusion", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
-    {name: "feeling lost", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
-    {name: "crocodiles", icon: "fa-solid ", emojisym: "", genre: ["General", "Adventure"]},
-    {name: "psychotic cat", icon: "fa-solid ", emojisym: "", genre: ["General", "Scary"]},
-    {name: "rabid hamsters", icon: "fa-solid ", emojisym: "", genre: ["General", "Scary"]},
-    {name: "no money", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Adventure"]},
-    {name: "darkness", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
-    {name: "lost map", icon: "fa-solid ", emojisym: "", genre: ["Adventure"]}
+    {name: "fire ants", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["General", "Fantasy", "Adventure", "Scary"]},
+    {name: "lonliness", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
+    {name: "swamp", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["Fantasy", "Adventure", "Scary"]},
+    {name: "confusion", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
+    {name: "feeling lost", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
+    {name: "crocodiles", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["General", "Adventure"]},
+    {name: "psychotic cat", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["General", "Scary"]},
+    {name: "rabid hamsters", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["General", "Scary"]},
+    {name: "no money", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["General", "Historical", "Adventure"]},
+    {name: "darkness", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["General", "Historical", "Fantasy", "Adventure", "Scary"]},
+    {name: "lost map", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["Adventure"]},
+    {name: "broken leg", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["General", "Adventure", "Scary"]},
+    {name: "flood", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["General", "Historical", "Fantasy", "Adventure"]},
+    {name: "escaped lion", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["General", "Fantasy", "Adventure"]},
+    {name: "goblin army", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["Fantasy"]},
+    {name: "corn maze", icon: "fa-solid fa-exclamation", emojisym: "128280", genre: ["Scary"]}
 ];
 
 const endings = [
-    {name: "happy", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]},
-    {name: "sad", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]},
-    {name: "surreal", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]},
-    {name: "inspirational", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]},
-    {name: "amusing", icon: "fa-solid ", emojisym: "", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]}
+    {name: "happy", icon: "fa-solid fa-circle-exclamation", emojisym: "128161", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]},
+    {name: "sad", icon: "fa-solid fa-circle-exclamation", emojisym: "128161", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]},
+    {name: "surreal", icon: "fa-solid fa-circle-exclamation", emojisym: "128161", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]},
+    {name: "inspirational", icon: "fa-solid fa-circle-exclamation", emojisym: "128161", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]},
+    {name: "melancholic", icon: "fa-solid fa-circle-exclamation", emojisym: "128161", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]},
+    {name: "educational", icon: "fa-solid fa-circle-exclamation", emojisym: "128161", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]},
+    {name: "optimistic", icon: "fa-solid fa-circle-exclamation", emojisym: "128161", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]},
+    {name: "pessimistic", icon: "fa-solid fa-circle-exclamation", emojisym: "128161", genre: ["General", "Historical", "Adventure", "Fantasy", "Scary"]}
 ];

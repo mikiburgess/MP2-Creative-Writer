@@ -32,18 +32,18 @@ const genres = ["General", "Historical", "Fantasy", "Adventure", "Scary"];
 
 // Data for the genre selection cards
 const genreCards = [
-	{id: "adventure", image: "ai-generated-hiker.jpg", altText: "Image of a bear", displayName: "Adventure", 
-        description: "Dive in and take an exciting adventure into places and situations unknown."},
-    {id: "historical", image: "castle.jpg", altText: "Image of a bear", displayName: "Historical", 
-        description: "Revisit the past and use your imagination to explore alternatives to historical events (global or personal)."},
-    {id: "fantasy", image: "floating-home.jpg", altText: "Image of a bear", displayName: "Fantasy", 
-        description: "Witches and wizzards. Dragons and goblins. Forests, castles and haunted houses. Where will your imagination take you?"},
-    {id: "scary", image: "full-moon.jpg", altText: "Image of a bear", displayName: "Scary", 
-        description: "Dare you face your fears? Or would you prefer to create someone else's nightmare? Select this option ... if you dare!"},
-    {id: "justwrite", image: "ai-generated-library.jpg", altText: "Image of a bear", displayName: "Just Write!", 
-        description: "Can't decide? Want to be surprised? Select this option for a random writing prompt."},
-    {id: "experiment", image: "books.jpg", altText: "Image of a bear", displayName: "Experiment", 
-        description: "To have full control and create a prompt unrestricted by genre, choose this option."}
+	{id: "adventure", image: "ai-generated-hiker.jpg", altText: "AI-generated sketch of a man wearing a backpack, hiking through rocky mountains.", 
+        displayName: "Adventure", description: "Dive in and take an exciting adventure into places and situations unknown."},
+    {id: "historical", image: "castle.jpg", altText: "Drawing of a path leading to a medievil castle with turrets, surrounded by hills and trees. ", 
+        displayName: "Historical", description: "Revisit the past and use your imagination to explore alternatives to historical events (global or personal)."},
+    {id: "fantasy", image: "floating-home.jpg", altText: "Drawing of a lake with a backdrop of rocky mountains. Suspended in the air above the lake is a small rock, with a house and some trees perched on top.", 
+        displayName: "Fantasy", description: "Witches and wizzards. Dragons and goblins. Forests, castles and haunted houses. Where will your imagination take you?"},
+    {id: "scary", image: "full-moon.jpg", altText: "Dark and creepy drawing of a person in a long red cloak walking through a dark, misty wood towards a cottage with one light in the window, underneath a full moon. A wolf watches from behind a tree.", 
+        displayName: "Scary", description: "Dare you face your fears? Or would you prefer to create someone else's nightmare? Select this option ... if you dare!"},
+    {id: "justwrite", image: "ai-generated-library.jpg", altText: "AI-generated sketch of a person sitting by a window in a library, at a desk covered in books, holding a blank notebook. ", 
+        displayName: "Just Write!", description: "Can't decide? Want to be surprised? Select this option for a random writing prompt."},
+    {id: "experiment", image: "books.jpg", altText: "Sketch of a pile of books, a pocketwatch, penknife and a pipe.", 
+        displayName: "Experiment", description: "To have full control and create a prompt unrestricted by genre, choose this option."}
 ];
 
 

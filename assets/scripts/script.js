@@ -12,8 +12,6 @@
  * Initialise a new, empty writing prompt object.
  */ 
 function initialiseWritingPrompt(){
-    console.log("function called successfully: initialiseWritingPrompt()");
-
     writingPrompt.genre = "";
     writingPrompt.hero = "";
     writingPrompt.heroMood = "";
@@ -23,8 +21,6 @@ function initialiseWritingPrompt(){
     writingPrompt.setting = ""; 
     writingPrompt.obstacle = "";
     writingPrompt.ending = "";
-
-    console.log("Writing prompt is currently: " + Object.values(writingPrompt));
 }
 
 
@@ -32,8 +28,6 @@ function initialiseWritingPrompt(){
  * Initialise site to be able to generate a new writing prompt.
  */ 
 function initialiseSite(){
-    console.log("function called successfully: initialiseSite()");
-
     $("#upper-section").html(`
         <div class="row justify-content-center">
           <div class="col-11 col-md-8 col-xl-6 site-text site-introduction">
@@ -75,8 +69,6 @@ function initialiseSite(){
  * @return {boolean} Confirm of generation
  */ 
 function generatePrompt() {
-    console.log("function called successfully: generatePrompt()");
-
     let chosenGenre = writingPrompt.genre;
 
     // Process the two non-specific genre options
@@ -124,7 +116,6 @@ function generatePrompt() {
         writingPrompt.setting = storySettings[Math.floor(Math.random() * storySettings.length)];
         writingPrompt.ending = storyEndings[Math.floor(Math.random() * storyEndings.length)];
 
-        console.log("Writing prompt is currently: " + Object.values(writingPrompt));
         return true;
 
     } catch(err) {
@@ -142,8 +133,6 @@ function generatePrompt() {
  * 
  */ 
 function createPrompt() {
-    console.log("function called successfully: createPrompt()");
-
     if (writingPrompt.genre) {
         if (generatePrompt()) {
             buildPromptSection();
@@ -161,8 +150,6 @@ function createPrompt() {
  * @param {string} promptData the prompt element selected by the user for refreshing.
  */ 
 function refresh(promptData) {
-    console.log("function called successfully: refresh(" + promptData + ")");
-
     let chosenGenre = writingPrompt.genre;
     if (chosenGenre == "Just Write!")  {
         chosenGenre = "General";
@@ -176,8 +163,6 @@ function refresh(promptData) {
     } else {
         switch(promptData) {  // Based on the button selected, generate a new random prompt element
             case 'hero': {
-                console.log ("Hero selected");
-
                 let storyElements = heroes.filter((i) => {
                     return i.genre.includes(chosenGenre);
                 });
@@ -186,8 +171,6 @@ function refresh(promptData) {
                 break;
             } 
             case 'heroMood': {
-                console.log ("Hero Mood selected");
-
                 let storyElements = heroMoods.filter((i) => {
                     return i.genre.includes(chosenGenre);
                 });
@@ -196,8 +179,6 @@ function refresh(promptData) {
                 break;
             } 
             case 'villain': {
-                console.log ("Villain selected");
-
                 let storyElements = villains.filter((i) => {
                     return i.genre.includes(chosenGenre);
                 });
@@ -205,9 +186,7 @@ function refresh(promptData) {
                 $("#villain").val("Villain: " + writingPrompt.villain.name);
                 break;
             } 
-            case 'villainMood': {
-                console.log ("Villain Mood selected");
-                
+            case 'villainMood': {                
                 let storyElements = villainMoods.filter((i) => {
                     return i.genre.includes(chosenGenre);
                 });
@@ -216,8 +195,6 @@ function refresh(promptData) {
                 break;
             } 
             case 'item': {
-                console.log ("Item selected");
-
                 let storyElements = items.filter((i) => {
                     return i.genre.includes(chosenGenre);
                 });
@@ -226,8 +203,6 @@ function refresh(promptData) {
                 break;
             } 
             case 'setting': {
-                console.log ("Setting selected");
-
                 let storyElements = settings.filter((i) => {
                     return i.genre.includes(chosenGenre);
                 });
@@ -236,8 +211,6 @@ function refresh(promptData) {
                 break;
             } 
             case 'obstacle': {
-                console.log ("Obstacle selected");
-
                 let storyElements = obstacles.filter((i) => {
                     return i.genre.includes(chosenGenre);
                 });
@@ -246,8 +219,6 @@ function refresh(promptData) {
                 break;
             } 
             case 'ending': {
-                console.log ("Ending selected");
-
                 let storyElements = endings.filter((i) => {
                     return i.genre.includes(chosenGenre);
                 });
@@ -256,7 +227,7 @@ function refresh(promptData) {
                 break;
             } 
             default:
-                console.log ("Unknown entry: " + promptData);
+                // do nothing
         }
         
     } 
@@ -269,15 +240,11 @@ function refresh(promptData) {
  * @param {string} selectedGenre dirplay name of the selected genre.
  */ 
 function displaySelectedGenre(selectedGenre) {
-    console.log("function called successfully: displaySelectedGenre()");
     if (selectedGenre) {
         writingPrompt.genre = selectedGenre;
         $(".text-prompt-genre").text(selectedGenre);
-        console.log("Selected genre = ", selectedGenre);
     } else {
-        $(".text-prompt-genre").text("chosen genre ...");
-        console.log("No genre selected");
-    }
+        $(".text-prompt-genre").text("chosen genre ...");    }
 }
 
 
@@ -291,8 +258,6 @@ function buildGenreCardsSection() {
     //      generate content
     // 3. update HTML section content (middle section)
     // 4. add the 'inspire me' button (lower section)
-
-    console.log("function called successfully: buildGenreCardsSection()");
 
     // Clear previous content from upper section
     $("#upper-section").html(`
@@ -352,8 +317,6 @@ function buildPromptSection(){
     //   4. append code to appropriate section
     //   5. add the buttons
     
-    console.log("function called successfully: buildPromptSection()");
-
     // Clear HTML content of the middle section
     $("#middle-section").empty();
 
@@ -430,8 +393,6 @@ function buildWritingSection(){
     //   2. Add writing space to middle section
     //   3. Add guidance text and email entry to lower section
     
-    console.log("function called successfully: buildWritingSection()");
-
     let promptText = 
         "GENRE: " + writingPrompt.genre +
         ";<br>HERO: " + writingPrompt.hero.name +
@@ -507,14 +468,9 @@ function buildWritingSection(){
  * 
  * @return {boolean} Will always return false to block site from reloading
  */ 
-function sendEmail(){
-    console.log("function called successfully: sendEmail()");
-    
+function sendEmail(){    
     // retrieve user's email address
     let address = $("#input-email").val();
-
-    console.log("Email address: " + $("#input-email").val());
-    console.log("Message: " + $("textarea").val());
 
     // Set lower section to display result
     $("#lower-section").html(`
@@ -556,10 +512,9 @@ function sendEmail(){
  */
 function restartConfirm() {
     if (window.confirm("Are you sure you want to restart?\n(All data will be lost!)")) {
-        console.log("User confirms they want to restart");
         initialiseSite();
     } else {
-        console.log("User says no, they do not want to restart");
+        // do nothing
     }
 }
 

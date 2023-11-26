@@ -327,7 +327,7 @@ function buildGenreCardsSection() {
     $("#lower-section").html(`
         <div class="row">
             <div class="col">
-                <button class="btn btn-genre-inspire site-btn" type="button" 
+                <button class="btn btn-genre-inspire site-btn" type="button" aria-haspopup="dialog"
                 aria-label="Confirm genre selection and proceed to seeing your generated writing prompt"
                 onClick="createPrompt()">Inspire me ...</button>
              </div>

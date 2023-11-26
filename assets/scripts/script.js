@@ -137,9 +137,9 @@ function createPrompt() {
         if (generatePrompt()) {
             buildPromptSection();
             populateWritingPromptBoxes();
-        };
+        }
     } else {
-        window.alert("Please make a selection before proceeding")
+        window.alert("Please make a selection before proceeding");
     }
 }
 
@@ -494,7 +494,7 @@ function sendEmail(){
     "; ENDING: " + writingPrompt.ending.name;
     
     // Send email to user
-    let emailSuccess = emailWriting($("#input-email").val(), writingPrompt, $("textarea").val())
+    let emailSuccess = emailWriting($("#input-email").val(), writingPrompt, $("textarea").val());
 
     // Display result notice to the user
     $(".user-notification").html(`

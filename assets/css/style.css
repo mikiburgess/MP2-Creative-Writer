@@ -145,7 +145,7 @@ p.lead {
 
     transition-property: font-weight;
     transition-property: border;
-    transition-property: margin_bottom;
+    transition-property: margin-bottom;
     transition-timing-function: ease-in-out;
     transition-duration: .2s;
 }
@@ -187,9 +187,6 @@ p.lead {
     transition: all .2s ease-in-out;
 }
 
-/* SITE INTERACTION ------------------------------------------ */
-
-
 
 /* USER PROMPT ---------------------------------------------- */
 
@@ -199,8 +196,7 @@ p.lead {
 
 .scroll { /* Dropshadow learned from https://css-tricks.com/almanac/properties/f/filter/ */
     width: 80vw;
-    filter: drop-shadow(2px 2px 5px rgb(0 0 0 / 0.5));
-    -webkit-filter: drop-shadow(2px 2px 5px rgb(0 0 0 / 0.5));
+    filter: drop-shadow(2px 2px 5px rgb(0 0 0 / 0.5));   
 }
 
 .text-prompt-genre { /* adapted from https://www.w3schools.com/howto/howto_css_image_text.asp */
@@ -355,5 +351,5 @@ p.lead {
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
-
+    /* No additional modifications for xx-large viewports */
 }

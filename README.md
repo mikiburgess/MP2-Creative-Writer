@@ -3,7 +3,9 @@
 The website completed and presented for Milestone Project 2 is intended to be a tool for inspiring writers in their practice. 
 It has been designed and developed using a mobile-first approach, and is accessible and responsive across a range of devices.
 
-![Illustration of site across a variety of devices](docs/images/amiresponsive.png)
+<p align="center">
+    <img src="docs/images/amiresponsive.png" alt="Illustration of site across a variety of devices">
+</p>
 
 [Visit the deployed site](https://mikiburgess.github.io/MP2-Creative-Writer/)
 
@@ -108,17 +110,23 @@ The needs of these users have been identified and described in the following set
 #### Background Image
 A background image was selected to replicate the feeling of an old handwritten notebook, supporting the theme of creative writing. Pixabay was used to identify a number of candidate background images.
 
-![Initial set of candidate background images](docs/images/candidate-backgrounds.png)
+<p align="center">
+    <img src="docs/images/candidate-backgrounds.png" alt="Initial set of candidate background images">
+</p>
+
 
 The final decision was made by selecting an image that would be unobtrusive and usable across multiple devices (i.e., suitable for a responsive site). 
 
 #### Color Palette
 The color palette for the site was created using [Coolors](https://coolors.co/) to be complementary to the selected background image.
 
-![Color palette generated for site](docs/images/color-palette.png)
+<p align="center">
+    <img src="docs/images/color-palette.png" alt="Color palette generated for site">
+</p>
 
 These colors were defined as names variables in the stylesheet to support color consistency across the site and improve code readability:
-```
+
+```javascript
 :root {
     --palette-pale-opaque: rgba(255, 230, 168, 0.8);
     --palette-pale: #ffe6a8;

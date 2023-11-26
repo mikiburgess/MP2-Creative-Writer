@@ -11,18 +11,12 @@
  * Send content of writing area to the entered email address.
  * Using EmailJS https://www.emailjs.com/
  * 
- * @param {address}
- * @param {prompt}
- * @param {writing}
+ * @param {address} string Email address to be used
+ * @param {writingPrompt} string The writing prompt to be sent
+ * @param {writing} string Story written by the user
  */ 
 
 function emailWriting(address, writingPrompt, writing ) {
-    
-    console.log("function called successfully: emailWriting()");
-
-    let successful = false;
-    // console.log(address + "\n" + prompt + "\n" + writing);
-
     emailjs.send("service_jfvl49m", "mp2_creative_writer", {
         "siteVisitor": address,
         "writing": writing,
@@ -35,14 +29,5 @@ function emailWriting(address, writingPrompt, writing ) {
         "setting": writingPrompt.setting.name,
         "obstacle": writingPrompt.obstacle.name,
         "ending": writingPrompt.ending.name
-    })
-    .then(
-        function(response) {
-            console.log("SUCCESS", response);
-        },
-        function(error) {
-            console.log("FAILED", error);
-        }
-    );
-    
+    });
 }

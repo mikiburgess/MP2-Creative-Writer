@@ -16,10 +16,6 @@
 }
 
 
-/* SITE MARGINGS & PADDING-- -------------------------------- */
-
-
-
 /* SITE SECTIONS -------------------------------------------- */
 
 header {
@@ -32,14 +28,12 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    /* align-items: center; */
     position: relative;
     min-height: 100vh;
     padding-bottom: 3rem;
 }
 
 footer {
-    /* background-color:burlywood; */
     position: absolute;
     bottom: 0;
     height: 3rem;
@@ -79,18 +73,13 @@ p, .site-text, .text-genre-card, .text-prompt-genre {
     font-family: 'Kalam', cursive;
 }
 
-
-p.lead{
+p.lead {
     font-size: calc(14px + 1vw);
     padding-bottom: 5px;
     margin-bottom: 25px;
 }
 
-.site-text {}
-
-
 .site-heading {
-    /* background-color: pink; */
     color: var(--palette-dark);
     align-self: center;
     font-size: calc(32px + 2.5vw);
@@ -111,10 +100,7 @@ p.lead{
 .text-prompt {
     border: var(--palette-caramel);
     border-style: solid;
-    /* background-color: var(--palette-pale); */
     color: var(--palette-rich);
-    /* font-size: larger; */
-
     font-style: oblique;
 }
 
@@ -123,9 +109,6 @@ p.lead{
     margin-right: 0;
     margin-bottom: 20px;
 }
-
-
-.text-writing-guidance {}
 
 .displayed-prompt,
 .user-notification,
@@ -143,6 +126,11 @@ p.lead{
 .textarea-writing {
     width: 95%;
 }
+
+.prompt-text:hover {
+    background-color: #820263;
+}
+
 
 /* BUTTONS -------------------------------------------------- */
 
@@ -185,52 +173,11 @@ p.lead{
     text-align: right;
 }
 
-.site-btn-minimalist {}
-
-.btn-refresh {}
-
-.btn-begin, 
-.btn-regenerate,
-.btn-lets-write,
-.btn-genre-inspire,
-
-.btn-email {
-    
-}
-
-
-
-/* SITE INTERACTION ------------------------------------------ */
-.prompt-text:hover {
-    background-color: #820263;
-}
-
 .site-btn:hover {
     background-color: var(--palette-chocolate);
     color: var(--palette-pale);
-    
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.25);
     font-weight: bolder;
-    /* margin: 10px;
-    margin-top: 4px; */
-    /* transition: all .2s ease-in-out; */
-}
-
-
-/* .btn-genre-card-select:hover {
-    background-color: var(--palette-chocolate);
-    color: var(--palette-pale);
-    
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4), 0 6px 20px 0 rgba(0,0,0,0.25);
-    font-weight: bolder;
-    margin: 10px;
-    margin-top: 4px;
-    transition: all .2s ease-in-out;
-} */
-
-.btn-genre-card-select:active {
-    /* border: var(--palette-rich);
-    border-style: solid; */
 }
 
 .btn-refresh:hover {
@@ -239,6 +186,10 @@ p.lead{
     font-size: x-large;
     transition: all .2s ease-in-out;
 }
+
+/* SITE INTERACTION ------------------------------------------ */
+
+
 
 /* USER PROMPT ---------------------------------------------- */
 
@@ -269,19 +220,11 @@ p.lead{
     background-color: var(--palette-pale-opaque);
     border-radius: 15px;
     opacity: 0.9;
-
     padding:  2px 10%;
-    
-    /* padding: 5px;
-    margin: 10% 2px; */
-
-    /* margin-top: 2px; */
     margin-top: 10px;
     margin-bottom: 2px;
     margin-left: 10px;
     margin-right: 10px;
-    /* min-width: 250px; */
-    
     height: 100%;
 }
 
@@ -294,7 +237,6 @@ p.lead{
 .genre-cards { /* container for all genre cards */
     margin-top: 10px;
     margin-bottom: 10px;
-    /* align-items: center; */
 }
 
 .img-genre-card {
@@ -307,10 +249,10 @@ p.lead{
 
 
 /* WRITING AREA --------------------------------------------- */
+
 .writing-area {
     display: flex;
     justify-content: center;
-    /* margin-top: 10px; */
     margin-bottom: 30px;
 }
 
@@ -339,6 +281,7 @@ p.lead{
     margin-top: 10px;
 }
 
+
 /*  MEDIA QUERIES ------------------------------------------- */
 
 /* X-Small devices (portrait phones, less than 576px)
@@ -346,10 +289,6 @@ p.lead{
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-    body {
-        /* background-color:blue; */
-    }
-    
     .scroll {
         width: 60vw;
     }
@@ -366,10 +305,6 @@ p.lead{
 @media (min-width: 768px) {
     header {
         margin-top: 50px;
-    }
-    
-    body {
-        /* background-color:lightskyblue; */
     }
 
     .scroll {
@@ -390,10 +325,6 @@ p.lead{
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    body {
-        /* background-color:aqua; */
-    }
-
     .scroll {
         width: 45vw;
     }
@@ -410,10 +341,6 @@ p.lead{
         margin-top: 75px;
     }
 
-    body {
-        /* background-color:aquamarine; */
-    }
-
     .scroll {
         width: 40vw;
     }
@@ -428,7 +355,5 @@ p.lead{
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
-    body {
-        /* background-color:powderblue; */
-    }
+
 }

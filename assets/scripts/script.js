@@ -8,7 +8,6 @@
 /*jshint esversion: 6 */
 
 
-
 /**
  * Initialise a new, empty writing prompt object.
  */ 
@@ -27,6 +26,7 @@ function initialiseWritingPrompt(){
 
     console.log("Writing prompt is currently: " + Object.values(writingPrompt));
 }
+
 
 /**
  * Initialise site to be able to generate a new writing prompt.
@@ -134,6 +134,7 @@ function generatePrompt() {
     
 } 
 
+
 /**
  * Check if genre has been selected.
  *    if yes - create prompt then build prompt section
@@ -169,11 +170,11 @@ function refresh(promptData) {
         chosenGenre = "General";  // Further development - select from any genre
     }
 
-    if (promptData == '') {
+    if (promptData == '') { // Check if prompt has been generated. If empty, then generate a new prompt
         createPrompt();
         populateWritingPromptBoxes();
     } else {
-        switch(promptData) {
+        switch(promptData) {  // Based on the button selected, generate a new random prompt element
             case 'hero': {
                 console.log ("Hero selected");
 
@@ -261,6 +262,7 @@ function refresh(promptData) {
     } 
 }
 
+
 /**
  * Display selected genre to the user, and update writingPrompt object.
  * 
@@ -277,6 +279,7 @@ function displaySelectedGenre(selectedGenre) {
         console.log("No genre selected");
     }
 }
+
 
 /**
  * Build and display the genre cards section.
@@ -335,17 +338,19 @@ function buildGenreCardsSection() {
     `);
 }
 
+
 /**
  * Build and display the generated writing prompt section.
  * 
  */ 
 function buildPromptSection(){
-    // 1. identify/specify required prompts
-    // 2. set number of columns (initially static - in future to be dynamic)
-    // 3. iterate though each required prompt element
-    //      add text and refresh button
-    // 4. append code to appropriate section
-    // 5. add the buttons
+    // Process outline:
+    //   1. identify/specify required prompts
+    //   2. set number of columns (initially static - in future to be dynamic)
+    //   3. iterate though each required prompt element
+    //        add text and refresh button
+    //   4. append code to appropriate section
+    //   5. add the buttons
     
     console.log("function called successfully: buildPromptSection()");
 
@@ -420,9 +425,10 @@ function populateWritingPromptBoxes() {
  * 
  */ 
 function buildWritingSection(){
-    // 1. Add prompt and guidance to upper section
-    // 2. Add writing space to middle section
-    // 3. Add guidance text and email entry to lower section
+    // Process outline:
+    //   1. Add prompt and guidance to upper section
+    //   2. Add writing space to middle section
+    //   3. Add guidance text and email entry to lower section
     
     console.log("function called successfully: buildWritingSection()");
 
@@ -493,7 +499,6 @@ function buildWritingSection(){
     $("#lower-section").empty();
     
     document.getElementById("writing-form").addEventListener("submit", sendEmail);
-    
 }
 
 
@@ -511,7 +516,6 @@ function sendEmail(){
     console.log("Email address: " + $("#input-email").val());
     console.log("Message: " + $("textarea").val());
 
-    
     // Set lower section to display result
     $("#lower-section").html(`
         <div class="row justify-content-center">

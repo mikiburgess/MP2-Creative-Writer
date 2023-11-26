@@ -58,7 +58,9 @@ function initialiseSite(){
     $("#middle-section").empty();
 
     $("#lower-section").html(`
-        <button type="button" class="btn site-btn btn-begin" onclick="buildGenreCardsSection()">
+        <button type="button" class="btn site-btn btn-begin" 
+            aria-label="Click to start and go to writing genre selection page" 
+            onclick="buildGenreCardsSection()">
             Click here to begin ...
         </button>
     `);
@@ -311,7 +313,9 @@ function buildGenreCardsSection() {
                   <h5 class="card-title">${genreCards[i].displayName}</h5>
                   <p class="card-text">${genreCards[i].description}</p>
                 </div>
-                <button class="btn btn-genre-card-select site-btn" role="button" onclick="displaySelectedGenre('${genreCards[i].displayName}')">
+                <button class="btn btn-genre-card-select site-btn" role="button" 
+                    aria-label="Select the ${genreCards[i].displayName} genre for generating the writing prompt"
+                    onclick="displaySelectedGenre('${genreCards[i].displayName}')">
                     Select ${genreCards[i].displayName}!
                 </button>
               </div>
@@ -323,7 +327,9 @@ function buildGenreCardsSection() {
     $("#lower-section").html(`
         <div class="row">
             <div class="col">
-                <button class="btn btn-genre-inspire site-btn" type="button" onClick="createPrompt()">Inspire me ...</button>
+                <button class="btn btn-genre-inspire site-btn" type="button" 
+                aria-label="Confirm genre selection and proceed to seeing your generated writing prompt"
+                onClick="createPrompt()">Inspire me ...</button>
              </div>
         </div>
     `);
@@ -353,10 +359,13 @@ function buildPromptSection(){
             currentHTML += (`
                 <div class="col-8 col-md-4 col-text-prompt">
                     <input type="text" class="form-control text-prompt" id="${promptDetails[i+l].id}" 
-                        placeholder="${promptDetails[i+l].placeholder}" aria-label=""${promptDetails[i+l].aria}" readonly/>
+                        placeholder="${promptDetails[i+l].placeholder}" aria-label="${promptDetails[i+l].aria}" readonly/>
                 </div>
                 <div class="col-2 col-sm-1 col-btn-refresh">
-                    <button class="btn btn-refresh btn-refresh-${promptDetails[i+l].id}" role="button" onClick="refresh('${promptDetails[i+l].id}')"><i class="fa-solid fa-arrows-rotate"></i></button>
+                    <button class="btn btn-refresh btn-refresh-${promptDetails[i+l].id}" role="button" 
+                        aria-label="Refresh the prompt item ${promptDetails[i+l].placeholder}"
+                        onClick="refresh('${promptDetails[i+l].id}')"><i class="fa-solid fa-arrows-rotate"></i>
+                    </button>
                 </div>    
             `);
         }
@@ -372,16 +381,18 @@ function buildPromptSection(){
     $("#lower-section").html(`
         <div class="row">
           <div class="col">
-            <button class="btn btn-regenerate site-btn" type="button" onclick="refresh('')">
+            <button class="btn btn-regenerate site-btn" type="button" 
+                aria-label="Generate a different writing prompt"  onclick="refresh('')">
                 I'm not happy. Regenerate
             </button>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <button class="btn btn-lets-write site-btn" type="button" onclick="buildWritingSection()">
+            <button class="btn btn-lets-write site-btn" type="button" 
+                aria-label="Accept the prompt and proceed to the writing page" onclick="buildWritingSection()">
                 I'm happy. Lets write!
-                </button>
+            </button>
           </div>
         </div>
     `);
@@ -466,10 +477,10 @@ function buildWritingSection(){
         <div class="row justify-content-center">
             <div class="col-auto my-auto">
                 <input type="email" class="site-input form-control" id="input-email"
-                    placeholder="Your email address" required/>
+                    aria-label="Enter your email address" placeholder="Your email address" required/>
             </div>
             <div class="col-auto">
-                <button class="btn site-btn" id="btn-email" type="submit">
+                <button class="btn site-btn" id="btn-email" type="submit" aria-label="Send email to entered email address">
                     Send email
                 </button>
             </div>

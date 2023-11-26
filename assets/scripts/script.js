@@ -281,7 +281,7 @@ function buildGenreCardsSection() {
                   <h5 class="card-title">${genreCards[i].displayName}</h5>
                   <p class="card-text">${genreCards[i].description}</p>
                 </div>
-                <button class="btn btn-genre-card-select site-btn" role="button" 
+                <button class="btn btn-genre-card-select site-btn" 
                     aria-label="Select the ${genreCards[i].displayName} genre for generating the writing prompt"
                     onclick="displaySelectedGenre('${genreCards[i].displayName}')">
                     Select ${genreCards[i].displayName}!
@@ -330,7 +330,7 @@ function buildPromptSection(){
                         placeholder="${promptDetails[i+l].placeholder}" aria-label="${promptDetails[i+l].aria}" readonly/>
                 </div>
                 <div class="col-2 col-sm-1 col-btn-refresh">
-                    <button class="btn btn-refresh btn-refresh-${promptDetails[i+l].id}" role="button" 
+                    <button class="btn btn-refresh btn-refresh-${promptDetails[i+l].id}" 
                         aria-label="Refresh the prompt item ${promptDetails[i+l].placeholder}"
                         onClick="refresh('${promptDetails[i+l].id}')"><i class="fa-solid fa-arrows-rotate"></i>
                     </button>

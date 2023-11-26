@@ -7,17 +7,32 @@ It has been designed and developed using a mobile-first approach, and is accessi
 
 [Visit the deployed site](https://mikiburgess.github.io/MP2-Creative-Writer/)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/mikiburgess/MP2-Creative-Writer??style=for-the-badge&style=plastic&logo=github)
-![GitHub language count](https://img.shields.io/github/languages/count/mikiburgess/MP2-Creative-Writer??style=for-the-badge&style=plastic&logo=appveyor)
-![GitHub top language](https://img.shields.io/github/languages/top/mikiburgess/MP2-Creative-Writer??style=for-the-badge&style=plastic&logo=javascript)
-![W3C Validator](https://img.shields.io/w3c-validation/html?&targetUrl=https%3A%2F%2Fmikiburgess.github.io%2FMP2-Creative-Writer%2Findex.html??style=for-the-badge&style=plastic&logo=w3c)
-![Site Status](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fmikiburgess.github.io%2MP2-Creative-Writer%2Findex.html??style=for-the-badge&style=plastic&logo=appveyor)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/mikiburgess/MP2-Creative-Writer/main?style=plastic&logo=github)
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/mikiburgess/MP2-Creative-Writer?style=plastic&logo=github)
+![GitHub language count](https://img.shields.io/github/languages/count/mikiburgess/MP2-Creative-Writer?style=plastic&logo=github)
+![GitHub top language](https://img.shields.io/github/languages/top/mikiburgess/MP2-Creative-Writer?style=plastic&logo=javascript)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fmikiburgess.github.io%2FMP2-Creative-Writer%2F&style=plastic&logo=github)
+
 
 - - -
 
 ## Table of Contents
 
 - [Introduction](#Introduction)
+- [User Experience (UX)](#User-Experience-(UX))
+  - [Project Goals](#Project-Goals)
+  - [Strategy](#Strategy)
+  - [Scope](#Scope)
+  - [Structure](#Structure)
+  - [Skeleton](#Skeleton)
+  - [Surface](#Surface)
+- Site Development
+- Site Features
+  - Current Features
+  - Future Features
+- Guide to Deployment and Development
+- Project Reflection
+- Credits
 
 - - -
 
@@ -129,4 +144,4 @@ The following fonts were selected for use across the site:
 
 - - -
 
-## Site Features
+## Site Development

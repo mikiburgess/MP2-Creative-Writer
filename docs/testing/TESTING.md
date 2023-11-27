@@ -1,4 +1,4 @@
-# The Creative Writer - Testing
+# Testing 'The Creative Writer'
 
 Overview of the testing of Milestone Project 2 - The Creative Writer.
 
@@ -6,13 +6,13 @@ Overview of the testing of Milestone Project 2 - The Creative Writer.
     <img src="../images/amiresponsive-overview.png" alt="Illustration of site across a variety of devices">
 </p>
 
-[Visit the deployed site](https://mikiburgess.github.io/MP2-Creative-Writer/)
-
 - - -
 
 ## Table of Contents
 
-- [Introduction](#Introduction)
+   - [Introduction](#Introduction)
+   - [Browser Compatibility](#Browser-Compatibility)
+   - [Site Responsiveness](#Site-Responsiveness)
 
 - - -
 
@@ -37,42 +37,44 @@ Results of the testing undertaken on each browser can also be seen in the follow
 - - -
 
 ## Site Responsiveness
-
 Responsiveness tests were undertaken using Google Chrome DevTools and the online tools [Responsive Design Checker](https://responsivedesignchecker.com/) and [AmIResponsive](https://ui.dev/amiresponsive). All tests were conducted using a MacBook. 
-Due to lack of access to multiple devices, all device responsiveness tests were completed using the Google Chrome DevTools emulation tool. Before professional site deployment, responsiveness would need to be tested on real devices.
+Due to lack of access to multiple devices, all device responsiveness tests were completed using the [Google Chrome DevTools simulation tool](https://developer.chrome.com/docs/devtools/device-mode/). Before professional site deployment, responsiveness would need to be tested on real devices.
 
-tested with ...
-For example, 
 
 <p align="center">
     <img src="responsive/rdc-10inch-notebook-small.png" alt="Illustration of site viewed on a 10 inch notebook">
-    <br><em>Figure: Responsive Design Checker</em>
+    <br><em>Figure: Responsive Design Checker Example</em>
 </p>
-
 
 <p align="center">
     <img src="responsive/amiresponsive-small.png" alt="Illustration of site across a variety of devices">
-   <br><em>Figure: AmIResponsive</em>
+   <br><em>Figure: AmIResponsive Example</em>
 </p>
 
 
-Google Chrome Tools example - Simulated iPad
-Google Chrome Tools example - Simulated iPad
+The following tables contain screenshots and results of the responsiveness tests.
 
-Google Chrome - testing across the Bootstrap breakpoints
 
-Devices
-Tested on MacBook Pro, Moto G, iPhone ... etc
-
+*Table: Results of responsive tests on simulated devices*
 
 | *TOOL* | *TESTS* |  
 | ----------- | ----------- |
 | [AmIResponsive](https://ui.dev/amiresponsive) | [Stage 0](responsive/amiresponsive-stage-0.png), [Stage 1](responsive/amiresponsive-stage-1.png), [All stages](responsive/amiresponsive.png) |
 | [Response Design Checker](https://responsivedesignchecker.com/) | [Google Pixel](responsive/rdc-google-pixel.png), [iPhone 6](responsive/rdc-iphone-6.png), [iPad Pro](responsive/rdc-ipad-pro.png), [Samsung Galaxy Tab 10](responsive/rdc-samsung-galaxy-tab-10.png), [10-inch Notebook](responsive/rdc-10inch-notebook.png), [22-inch Desktop](responsive/rdc-22inch-desktop.png) |
-| Google Chrome DevTools | |
+| [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/device-mode/) | [iPad-landscape](responsive/chrome-simulated-ipad-landscape/), [iPad-portrait](responsive/chrome-simulated-ipad-portrait/), [Moto G4-landscape](responsive/chrome-simulated-moto-g4-landscape/), [Moto G4-portrait](responsive/chrome-simulated-ipad-portrait/) |
 
 
+*Table: Results of responsive tests across Bootstrap Breakpoints*
 
+| Stage | *XS* | *SM* | *MD* | *LG* | *XL* | *XXL* | *Comment* |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 0. Welcome | [xs](responsive/bootstrap-breakpoints/1-stage0-xs.png) | [sm](responsive/bootstrap-breakpoints/2-stage0-sm.png) | [md](responsive/bootstrap-breakpoints/3-stage0-md.png) | [lg](responsive/bootstrap-breakpoints/4-stage0-lg.png) | [xl](responsive/bootstrap-breakpoints/5-stage0-xl.png) | [xxl](responsive/bootstrap-breakpoints/6-stage0-xxl.png) | No issues |
+| 1. Genre Selection | [xs](responsive/bootstrap-breakpoints/1-stage1-xs.png) | [sm](responsive/bootstrap-breakpoints/2-stage1-sm.png) | [md](responsive/bootstrap-breakpoints/3-stage1-md.png) | [lg](responsive/bootstrap-breakpoints/4-stage1-lg.png) | [xl](responsive/bootstrap-breakpoints/5-stage1-xl.png) | [xxl](responsive/bootstrap-breakpoints/6-stage1-xxl.png) | No issues |
+| 2. Writing Prompt | [xs](responsive/bootstrap-breakpoints/1-stage2-xs.png) | [sm](responsive/bootstrap-breakpoints/2-stage2-sm.png) | [md](responsive/bootstrap-breakpoints/3-stage2-md.png) | [lg](responsive/bootstrap-breakpoints/4-stage2-lg.png) | [xl](responsive/bootstrap-breakpoints/5-stage2-xl.png) | [xxl](responsive/bootstrap-breakpoints/6-stage2-xxl.png) | No issues |
+| 3. Writing Page | [xs](responsive/bootstrap-breakpoints/1-stage3-xs.png) | [sm](responsive/bootstrap-breakpoints/2-stage3-sm.png) | [md](responsive/bootstrap-breakpoints/3-stage3-md.png) | [lg](responsive/bootstrap-breakpoints/4-stage3-lg.png) | [xl](responsive/bootstrap-breakpoints/5-stage3-xl.png) | [xxl](responsive/bootstrap-breakpoints/6-stage3-xxl.png) | No issues |
+
+
+- - -
 
 ## Code Validation
 

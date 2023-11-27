@@ -346,7 +346,7 @@
 					<key>scaleValue</key>
 					<integer>0</integer>
 					<key>sizeValue</key>
-					<integer>480</integer>
+					<integer>50</integer>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.ScaleImage</string>

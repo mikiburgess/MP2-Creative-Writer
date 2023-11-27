@@ -18,15 +18,18 @@ Overview of the testing of Milestone Project 2 - The Creative Writer.
    - [User Stories](#User-Stories)
    - [Features](#Features)
    - [Bugs and Issues](#Bugs-and-Issues)
-   
+
 
 - - -
+
 
 ## Introduction
 This document describes the testing process and results for Milestone Project 2. For additional project details please refer to:
 - [Main project README document](../../README.md)
 - [Deployed web site](https://mikiburgess.github.io/MP2-Creative-Writer/)
 
+
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
 - - -
 
 ## Browser Compatibility
@@ -41,6 +44,8 @@ Browser compatibility testing was completed with Chrome, Firefox, Safari and Ope
 
 Results of the testing undertaken on each browser can also be seen in the following folders: [Chrome](browsers/chrome/), [Firefox](browsers/firefox/), [Safari](browsers/safari/), [Opera](browsers/opera/).
 
+
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
 - - -
 
 ## Site Responsiveness
@@ -81,6 +86,7 @@ The following tables contain screenshots and results of the responsiveness tests
 | 3. Writing Page | [xs](responsive/bootstrap-breakpoints/1-stage3-xs.png) | [sm](responsive/bootstrap-breakpoints/2-stage3-sm.png) | [md](responsive/bootstrap-breakpoints/3-stage3-md.png) | [lg](responsive/bootstrap-breakpoints/4-stage3-lg.png) | [xl](responsive/bootstrap-breakpoints/5-stage3-xl.png) | [xxl](responsive/bootstrap-breakpoints/6-stage3-xxl.png) | No issues |
 
 
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
 - - -
 
 ## Code Validation
@@ -125,6 +131,7 @@ The three JavaScript files were validated using [JSHint v2.13](https://jshint.co
 
 No other issues were raised.
 
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
 - - -
 
 ## Lighthouse Testing
@@ -144,6 +151,7 @@ The Creative Writer comprises a single page, `index.html`, which is dynamically 
 
 One of the main issues highlighted during testing was color contrast could be improved. This had already been considered and been marked as an area for future development.
 
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
 - - -
 
 ## User Stories
@@ -169,7 +177,7 @@ To validate the achievement of original website goals, the table below revisits 
 | 1. a free to use resource that can be used in the classroom, on any available computing devices (e.g., laptops, tablets, mobile devices, etc). | Site is free to use and has been tested across a variety of viewports and simulated devices. |
 | 2. a tool that can be used to inspire my students in creative writing exercises | Users are guided through creating a writing prompt that can be used directly within the site, a different writing tool or a handwritten notebook |
 
-
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
 ---
 
 ## Features
@@ -184,6 +192,7 @@ All site features have been manually tested. The results of these tests are show
 |  |  | |  | Pass | 
 |  |  | |  | Pass | 
 
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
 - - -
 
 ## Bugs and Issues
@@ -248,4 +257,5 @@ To combat this, when the refresh button is selected the new element needs to be 
 Further consideration needs to be given to the color palette, increasing color contrast in order to improve site accessibility. 
 This was identified through both personal reflection and Lighthouse testing, and has been included in future work proposals (outlined in [README](../../README.md)).
 
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
 - - -

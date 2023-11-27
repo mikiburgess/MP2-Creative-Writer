@@ -70,19 +70,6 @@
 					<key>promptMessage</key>
 					<string>Choose a Finder Item:</string>
 				</dict>
-				<key>ActionRuntimeParameters</key>
-				<dict>
-					<key>defaultLocation</key>
-					<string>/Users/mikhailaburgess/Desktop</string>
-					<key>granularity</key>
-					<integer>0</integer>
-					<key>multipleSelection</key>
-					<true/>
-					<key>promptMessage</key>
-					<string>Choose a Finder Item:</string>
-					<key>temporary items path</key>
-					<string>/var/folders/_8/ntg56fcj0sv9sxh2k4jzz0lm0000gn/T/236830C7-B65F-4828-A6AC-EF6EF378B931/1/com.apple.Automator.AskForFinderItems</string>
-				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.AskForFinderItems</string>
 				<key>CFBundleVersion</key>
@@ -353,7 +340,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>percentageValue</key>
-					<integer>60</integer>
+					<integer>33</integer>
 					<key>scaleMethod</key>
 					<integer>1</integer>
 					<key>scaleValue</key>

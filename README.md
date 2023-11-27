@@ -181,6 +181,7 @@ A background image was selected to replicate the feeling of an old handwritten n
     <img src="docs/images/candidate-backgrounds.png" alt="Initial set of candidate background images">
 </p>
 
+*Figure 8: Candidate site background images*
 
 The final decision was made by selecting an image that would be unobtrusive and usable across multiple devices (i.e., suitable for a responsive site). 
 
@@ -190,6 +191,8 @@ The color palette for the site was created using [Coolors](https://coolors.co/) 
 <p align="center">
     <img src="docs/images/color-palette.png" alt="Color palette generated for site">
 </p>
+
+*Figure 9: Site color palette*
 
 These colors were defined as names variables in the stylesheet to support color consistency across the site and improve code readability:
 
@@ -222,5 +225,80 @@ Site accessibility was considered throughout the design, development and testing
 
 <kbd>[Return to ToC](#Table-of-Contents)</kbd>
 - - -
+
+## Site Functionality
+The Creative Writer is a single page site that is dynamically constructed according to user interaction. The following presents a walkthrough of it's current features.
+
+A number of further developments are planned which will improve functionality, accessibility and the overall user experience (UX). These are discussed later under [Future Features](#Future-Features).
+
+(*Note - Figure labels have been omitted from this section for clarity.*)
+
+
+### Stage 0: Welcome to the Site
+The current start page welcomes site visitors. The user then clicks the button to begin.
+
+<p align="center">
+    <img src="docs/images/walkthrough-0-start.png" alt="Current start page">
+</p>
+
+<!-- *Figure 10: Current start page (stage 0)* -->
+
+**Stage 1:** The user is presented with a number of story themes, or 'genres', from which they can select. 
+When selected the 'chosen genre' text will update to tell the user which genre they have currently chosen.
+
+<p align="center">
+    <img src="docs/images/walkthrough-1-genre-top.png" alt="Genre selection">
+</p>
+
+<!-- *Figure 11: Genre selection (stage 1)* -->
+
+**Stage 1:** Once ready the user clicks the button to confirm their chosen genre. This selection will then focus the type of writing prompt to be generated at the next stage.
+
+<p align="center">
+    <img src="docs/images/walkthrough-1-genre-bottom.png" alt="Genre selection">
+</p>
+
+<!-- *Figure 12: Confirm genre selection (stage 1)* -->
+
+**Stage 2:** A writing prompt is randomly generated according to the user selected genre. 
+If the user is unhappy and wants a different set of elements, clicking the *"I'm not happy"* button will generate a new set of writing prompt elements.
+If the user wishes to modify any single element, clicking the associated refresh icon (button) will randomly select another (leaving the others unchanged). 
+Once happy, the user can click the *"I'm happy"* button, which takes them to the next stage.
+
+<p align="center">
+    <img src="docs/images/walkthrough-2-prompt.png" alt="Generated writing prompt">
+</p>
+
+<!-- *Figure 13: Generated writing prompt (stage 2)* -->
+
+**Stage 3:** The final page of the site displays the final, complete writing prompt to the user, who can then use the text area to compose their story/prose. This area include no formatting or spell checking tools to support the free, stream-of-consciousness writing style to encourage the creative writer explore their imagination.
+
+<p align="center">
+    <img src="docs/images/walkthrough-3-writing.png" alt="Writing area">
+</p>
+
+<!-- *Figure 14: Writing area (stage 3)* -->
+
+**Finishing Up:** When the user has completed their writing exercise, of simply wishes to save the writing prompt for use later, entering their email in the space provided and clicking the *"Send email"* button will sent the prompt and any text they have written directly to their inbox.
+
+<p align="center">
+    <img src="docs/images/walkthrough-sending-email.png" alt="Sending an email">
+</p>
+
+<!-- *Figure 15: Sending an email* -->
+
+For example, based on the prompt and text written in the above example the user will receive the following email:
+
+<p align="center">
+    <img src="docs/images/walkthrough-received-email.png" alt="Emai sent from The Creative Writer">
+</p>
+
+<!-- *Figure 16: Email sent from 'The Creative Writer'* -->
+
+
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
+---
+
+
 
 ## Site Development

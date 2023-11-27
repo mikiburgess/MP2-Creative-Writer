@@ -43,28 +43,24 @@ It has been designed and developed using a mobile-first approach, and is accessi
 
 This repository and the associated deployed website comprise my submission for the Diploma in Web Development, Milestone Project 2. 
 
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
 - - -
 
 ## User Experience (UX)
+This site is targeted at individuals who are looking for writing prompts to inspire their creative writing. The target users and approach to designing and developing this site is discussed below.
 
-
-
-
-...
 
 ### Project Goals
 The primary goal of this project is to design, develop and deploy a website to inspire and support writers, specifically those with an interest in creative (fiction) writing.
 
 ### Strategy
 <!-- What are we aiming to achieve, and for whom? -->
-
-The target audience for this site is for anyone looking for ideas to inspire their creative writing. This ranges from individuals wishing to write a story but don't know where to start, a writer looking for a writing exercise to develop their skills, to an educator looking for a tool to help engage their students in creative writing.
+The target audience for this site is for anyone looking for ideas to inspire their creative writing. This ranges from individuals wishing to write a story but don't know where to start, writers looking for writing exercises to develop their skills, to educators looking for a tool to help engage their students in creative writing.
 As the focus of this site is supporting writers, the site also needs to be intuitive to use (so they can get writing quickly), and uncluttered (so they can write without distractions, such as adverts and animations).
 
 
 ### Scope
 <!-- What features do we want to include in the design? What's on the table, and whats off (for now)? -->
-
 This creative writing prompt generator aims to provide cognitive exercise for the creative writer, inspire the short story writer, and support the daily meditative and free writer. As well as being used by individuals, it's also intended that this tool be a free writing support resource for educators in an upper-high school and/or collage environment.
 The needs of these users have been identified and described in the following set of user stories.
 
@@ -94,16 +90,89 @@ The four identified users for this site are listed below, along with their speci
 
 ### Structure
 <!-- How is the information structured, and is it logically grouped? -->
+This site will comprise a single HTML page, but with dynamic content that will be constructed and displayed as the site visitor uses the site features. This dynamic behaviour will be developed using JavaScript.
+
+In order to be able to generate a writing prompt, the number of prompt items needs to be decided and a suitable set of data created for each.
+The data for all writing prompt elements will be stored in JavaScript objects - one per writing prompt element: 
+
+```javascript
+{name: "", icon: "fa-solid ", emojisym: "", genre: []}
+```
+- `name` => the displayed text for the writing prompt element (eg, for the 'villain' prompt element the name may be 'vampire').
+ - `icon` => reference to a 'fontawesome' icon used to represent this element (eg, an icon for a 'vampire'). [*key included ready for future site development*]
+ - `emojisym` => symbol for the emoji that can be used to represent this element (eg, the 'vampire' emoji). [*key included ready for future site development*]
+ - `genre[]` => array containing all genres for which this element is applicable (eg, for 'vampire' this would include 'Scary' and 'Fantasy').
+
+This approach was taken as in future this could be easily developed into a JSON or SQL data storage facility.
+
+Initially four genres and two 'flexible' options will be stored in an array:
+```javascript
+const genres = ["General", "Historical", "Fantasy", "Adventure", "Scary"];
+```
+This decision was made to again support future development by expanding the available genres.\
+\
+\
+The backed file structure was implemented according to the following design:
+
+
+
+    - 📰 index.html           <-- single, dynamically constructed page
+    - 📂 assets
+        - 📂 css
+            - 📰 style.css    <-- CSS stylesheet 
+        - 📂 images           <-- folder containing all site images 
+        - 📂 scripts
+            - 📰 data.js      <-- Javascript - containing all site data
+            - 📰 script.js    <-- JavaScript - code for site construction and interaction
+            - 📰 sendMail.js  <-- JavaScript - code for sending email using EmailJS
+*Figure 1: Design of site file structure*
+
 
 
 ### Skeleton
 <!-- How the information should be implemented, and how the user will navigate through the info/features -->
+The site will comprise a single page, with content dynamically constructed as the user navigates through the creative writing process using site buttons to control progress between each stage.
+
+The activity flow through the site will be as follows:
+```
+ Starting point => Stage 0 - Welcome: Introduction to the site.
+ leads to => Stage 1 - Genre Selection: Set of options from which user can select.
+ leads to => Stage 2 - Writing Prompt Generation: View and edit a the randomly generated writing prompt for the selected genre.
+ leads to => Stage 3 - Writing Area: Space for writing a story based on the generated writing prompt.
+ leads to => prompt and writing being emailed to site user
+```
 
 #### Wireframes
+A set of wireframes were developed to guide the site build. For each stage in the application flow a wireframe was designed for the following Bootstrap breakpoints: X-Small, Small, Medium, Large, X-Large. These were created to ensure responsiveness across devices/viewports.
+
+In addition, two further sets of wireframes were created to support site implementation. These latter two focussed only on the small (mobile phone) device size, supporting the mobile-first approach to design.\
+\
+\
+![Stage 0 - Welcome to the Site*](docs/wireframes/stage-0-start.png)
+*Figure 2: Stage 0 - Welcome to the Site*
+
+![Stage 1 - Genre Selection*](docs/wireframes/stage-1-select-genre.png)
+*Figure 3: Stage 1 - Genre Selection*
+
+![Stage 2 - Writing Prompt Generation and Display*](docs/wireframes/stage-2-writing-prompt.png)
+*Figure 4: Stage 2 - Writing Prompt Generation and Display*
+
+![Stage 3 - Writing Area*](docs/wireframes/stage-3-writing-page.png)
+*Figure 5: Stage 3 - Writing Area*
+
+![Site structure and elements*](docs/wireframes/structure-element-design.png)
+*Figure 6: Site structure and elements (classes & ids)*
+
+![Code elements*](docs/wireframes/code-design.png)
+*Figure 7: Code elements (site functionality & interactivity)*\
+\
+\
+Minor adjustments were made to the final design based on reflection during the development stage. However these were minimal. 
 
 
 ### Surface
 <!-- What the product will actually look like, colors, typography, images, design elements, etc -->
+The surface design decisions of the site were driven by the idea of writing, and specifically writing in a book.
 
 #### Background Image
 A background image was selected to replicate the feeling of an old handwritten notebook, supporting the theme of creative writing. Pixabay was used to identify a number of candidate background images.
@@ -144,10 +213,14 @@ The following fonts were selected for use across the site:
 - [Kalam](https://fonts.google.com/specimen/Kalam)  - a cursive font for most text on the site, including the user writing area (`<textarea>`)
 - [Libre Baskerville](https://fonts.google.com/specimen/Libre+Baskerville) - a crisp serif font for other site headings, site buttons and the site footer.
 
+#### Site Images
+A selection of royalty-free images were chosen from [Pixabay](https://pixabay.com/) to represent each of the four genres, and the two additional options. The focus again was on drawings rather than photographs, considering the types of sketches a writer may include in their notebook.
 
 #### Accessibility
+Site accessibility was considered throughout the design, development and testing process. This was guided by [W3C ARIA guidelines](https://www.w3.org/WAI/ARIA/apg/) and [MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA).
 
 
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
 - - -
 
 ## Site Development

@@ -14,6 +14,11 @@ Overview of the testing of Milestone Project 2 - The Creative Writer.
    - [Browser Compatibility](#Browser-Compatibility)
    - [Site Responsiveness](#Site-Responsiveness)
    - [Code Validation](#Code-Validation)
+   - [Lighthouse Testing](#Lighthouse-Testing)
+   - [User Stories](#User-Stories)
+   - [Features](#Features)
+   - [Bugs and Issues](#Bugs-and-Issues)
+   
 
 - - -
 

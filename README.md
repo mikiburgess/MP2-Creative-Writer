@@ -300,5 +300,53 @@ For example, based on the prompt and text written in the above example the user 
 ---
 
 
-
 ## Site Development
+### Development Tools
+- UI Wireframes were created using [Balsamiq](https://balsamiq.com/)
+- Code was be developed locally using [Visual Studio Code](https://code.visualstudio.com/)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/), as embedded within Google's Chrome browser, were used to support the development. In particular, the code inspector, [Lighthouse](https://developer.chrome.com/docs/lighthouse/), and the responsive design checker (for checking site responsiveness across all viewports)
+- Completed site was deployed using [GitHub Pages](https://pages.github.com/).
+
+### Version Control
+Versioning was managed locally using [Git](https://git-scm.com/). 
+
+Code was committed regularly during the development process, with each commit being labelled according to the work type.
+
+*Table 1: Summary of Git Commit Types*
+
+| *TYPE* | *DESCRIPTION* |
+| --- | --- |
+| `ADD` | Adding general content |
+| `BUILD` | Code/Project build changes |
+| `DOCS` | Modifications/updates relating to project documentation |
+| `FEAT` | Adding a new feature to the application |
+| `FIX` | Fixing a bug/issue |
+| `REFACTOR` | Code modifications/maintenance that are not fixes or features |
+| `STYLE` | Modifications/updates relating to styling |
+| `TEST` | Updates relating to testing (practical and documentation) |
+| `UPDATE` | Modifying existing code functionality |
+
+All committed code was regularly pushed to [GitHub](https://github.com/mikiburgess).
+
+
+### Project Management
+Project planning and management was done using the GitHub Projects tool (i.e. a digital Kanban board).
+
+### Languages & Libraries
+This site was developed using HTML, CSS, JavaScript and JQuery. 
+Comments were added throughout all code files for explanation (where appropriate) and clarifying structure.
+
+The [EmailJS](https://www.emailjs.com/) JavaScript library was employed to send an email from the site to the user.
+
+### Frameworks
+This project employed the Bootstrap v5.3 framework for basic site styling, with additional CSS styling incorporated to tailor the site to the needs of the target audience. Bootstrap support was obtained through the official [Bootstrap documentation](https://getbootstrap.com/), [W3Schools](https://www.w3schools.com/bootstrap5/index.php).
+
+
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
+- - -
+
+## Testing
+Full overview and results of site testing can be found in [TESTING.MD](docs/testing/TESTING.md).
+
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
+- - -

@@ -53,7 +53,7 @@ function initialiseSite(){
 
     $("#lower-section").html(`
         <button type="button" class="btn site-btn btn-begin" 
-            aria-label="Click to start and go to writing genre selection page" 
+            aria-label="Click here to begin" 
             onclick="buildGenreCardsSection()">
             Click here to begin ...
         </button>
@@ -261,7 +261,7 @@ function buildGenreCardsSection() {
 
     // Clear previous content from upper section
     $("#upper-section").html(`
-        <img src="assets/images/scroll.png" class="scroll"/>
+        <img src="assets/images/scroll.png" class="scroll" aria-hidden="true"/>
         <div class="text-prompt-genre"></div>
     `);
     displaySelectedGenre();
@@ -282,7 +282,7 @@ function buildGenreCardsSection() {
                   <p class="card-text">${genreCards[i].description}</p>
                 </div>
                 <button class="btn btn-genre-card-select site-btn" 
-                    aria-label="Select the ${genreCards[i].displayName} genre for generating the writing prompt"
+                    aria-label="Select ${genreCards[i].displayName}!"
                     onclick="displaySelectedGenre('${genreCards[i].displayName}')">
                     Select ${genreCards[i].displayName}!
                 </button>
@@ -296,7 +296,7 @@ function buildGenreCardsSection() {
         <div class="row">
             <div class="col">
                 <button class="btn btn-genre-inspire site-btn" type="button" aria-haspopup="dialog"
-                aria-label="Confirm genre selection and proceed to seeing your generated writing prompt"
+                aria-label="Show me my writing prompt"
                 onClick="createPrompt()">Show me my writing prompt ...</button>
              </div>
         </div>
@@ -350,7 +350,7 @@ function buildPromptSection(){
         <div class="row">
           <div class="col">
             <button class="btn btn-regenerate site-btn" type="button" 
-                aria-label="Generate a different writing prompt"  onclick="refresh('')">
+                aria-label="I'm not happy. Regenerate"  onclick="refresh('')">
                 I'm not happy. Regenerate
             </button>
           </div>
@@ -358,7 +358,7 @@ function buildPromptSection(){
         <div class="row">
           <div class="col">
             <button class="btn btn-lets-write site-btn" type="button" 
-                aria-label="Accept the prompt and proceed to the writing page" onclick="buildWritingSection()">
+                aria-label="I'm happy. Lets write!" onclick="buildWritingSection()">
                 I'm happy. Lets write!
             </button>
           </div>

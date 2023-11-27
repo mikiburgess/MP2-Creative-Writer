@@ -99,11 +99,13 @@ The validator highlighted that html `section`'s should contain headings. Heading
 Considering the feedback from the validator, in future the more appropriate `div` element will be used rather than `section`.
 
 ![Feedback on section headings](screenshots/html-section-headings.png) 
+
 *Figure 3: Section headings*
 
 The validator also highlighted that, when referring to JavaScript resources, including ```type="text/javascript"``` is superfluous. This was included for code readability and has no impact on functionality ot performance. However, these could be removed in future.
 
 ![Feedback on script elements](screenshots/html-javascript-type.png) 
+
 *Figure 4: Script elements*
 
 No other issues were identified by the validator.
@@ -113,6 +115,7 @@ The [W3C Jigsaw Validation Service](https://jigsaw.w3.org/css-validator/#validat
 No issues or warnings were raised.
 
 ![Successful CSS validation](screenshots/css-validation.png) 
+
 *Figure 5: Result of CSS Validation*
 
 ### JavaScript Validation
@@ -183,14 +186,26 @@ To validate the achievement of original website goals, the table below revisits 
 ## Features
 All site features have been manually tested. The results of these tests are shown in the tables below:
 
-*Table: Stage 6 - Genre Selection *
-| Feature | Expected Outcome | Action | Result | Pass/Fail | 
-| ------- | ------- | ------- | ------- | ------- |
-| Return to Start | Clicking 'Return to Start' will raise an alert asking user to confirm |  Click 'Return to Start'| Alert shown | Pass | 
-|  |  | |  | Pass | 
-| Genre selection | Clicking on any genre button will update the genre text displayed at the top of the page | Click genre button(s) | Genre text displayed at the top of the page | Pass (for all genre buttons) | 
-|  |  | |  | Pass | 
-|  |  | |  | Pass | 
+
+*Table 6: Result of feature tests*
+
+| Stage | Feature | Expected Outcome | Action | Result | Pass/Fail | 
+| :---: | ------- | ------- | ------- | ------- | :-----: |
+| 0 | '*Click here to begin*' button | Clicking the '*Click here to begin*' button will take the user to the first stage of the process, the writing genre selection page | Click the '*Click here to begin*' button | Writing genre selection page is displayed | Pass | 
+| 0-3 | '*Return to Start*' | Clicking '*Return to Start*' will raise an alert asking user to confirm |  Click '*Return to Start*'| Alert shown | Pass | 
+| 0-3 | Confirm return to start | Clicking 'ok' to confirm returning to start reloads the welcome page and clears previously selected/generated data | Click 'ok' | Alert closes and welcome page is displayed | Pass | 
+| 0-3 | Cancel return to start | Clicking 'cancel' to closes the alert box and returns user to the current page | Click 'cancel' | Alert closes and user returned to unchanged page | Pass | 
+| 1 | Genre selection buttons | Clicking on any genre button will update the genre text displayed at the top of the page | Click genre button(s) | Genre text displayed at the top of the page | Pass (for all genre buttons) | 
+| 1 | '*Show me my writing prompt*' button | Clicking the '*Show me my writing prompt*' without having first clicked on a genre button will raise an alert telling the user to make a selection before proceeding | Click the '*Show me my writing prompt*' button | Alert shown | Pass | 
+| 1 | '*Show me my writing prompt*' button | Clicking the '*Show me my writing prompt*' after having clicked a genre button will clear the current page and display the randomly generated writing prompt | Click a genre button then click the '*Show me my writing prompt*' button | Writing prompt page is displayed, showing the randomly generated writing prompt | Pass | 
+| 2 | '*Refresh*' buttons | Clicking on any refresh button will update the content of the associated text prompt box | Click refresh button(s) | Content of associated text prompt box is updated | Pass (for all refresh buttons) |
+| 2 | '*I'm not happy. Regenerate*' button| Clicking the '*I'm not happy. Regenerate*' button will update all writing prompt boxes with new, randomly generated text | Click the '*I'm not happy. Regenerate*' button | A newly randomly generated writing prompt is displayed, updating all text prompt boxes | Pass |
+| 2 | '*I'm happy. Lets write!*' button | Clicking the '*I'm happy. Lets write!*' button will result in the writing page being displayed and the previous writing prompt included at the top of the page | Click the '*I'm happy. Lets write!*' button | Writing page is displayed with generated writing prompt included at the top of the page | Pass |
+| 3 | Story text area | Site visitor can type in the story text area | Type in the story text area | Text is available in the text area | Pass |
+| 3 | '*Send email*' button | Clicking *Send email* button without entering an email address will result in the popup message "Please fill in this field"| Click '*Send email*' button without entering an email address | Popup message displayed | Pass |
+| 3 | '*Send email*' button | Clicking *Send email* button after entering an incorrectly formatted email address will result in the popup message "Please include an '@' in the email address" | Click '*Send email*' button with incorrectly formatted email address| Popup message displayed| Pass |
+| 3 | '*Send email*' button | Clicking *Send email* button after entering a valid email address will result in a the notice 'ACTION COMPLETE! Please check your email' being displayed on the page, and an email arriving at the entered address containing story data  | Enter email address then click '*Send email*' button | Notice displayed on the page and email arrives in inbox | Pass |
+
 
 <kbd>[Return to ToC](#Table-of-Contents)</kbd>
 - - -
@@ -207,7 +222,7 @@ When loading the initial landing page, a number of elements need to be loaded be
 
 <p align="center">
     <img src="screenshots/site-loading.png" alt="Site Loading notification with Bootstrap spinner">
-   <br><em>Figure: Site Loading notification with Bootstrap spinner</em>
+   <br><em>Figure 6: Site Loading notification with Bootstrap spinner</em>
 </p>
 
 No issues with site loading was identified during development and testing. However, this notice and spinner was added to engage with the user just in case of any connection delays in the future.
@@ -220,7 +235,7 @@ The button at the bottom of the genre selection page was initially labelled "Ins
 
 <p align="center">
     <img src="screenshots/button-updated.png" alt="Shows original button and updated button">
-   <br><em>Figure: Original and Updated button</em>
+   <br><em>Figure 7: Original and Updated button</em>
 </p>
 
 Having updated the text, the purpose of this button is now clearer.
@@ -232,7 +247,7 @@ During initial Lighthouse testing a few issues were raised:
 
 <p align="center">
     <img src="screenshots/example-aria-text.png" alt="Example of aria-label mismatch">
-   <br><em>Figure: Example of aria-label mismatch</em>
+   <br><em>Figure 8: Example of aria-label mismatch</em>
 </p>
 
 ### Outstanding Issues
@@ -248,7 +263,7 @@ This approach gives rise to the possibility that the same element may be selecte
 
 <p align="center">
     <img src="screenshots/refresh-writing-element.png" alt="Hero writing prompt element with refresh button">
-   <br><em>Figure: Hero writing prompt element with refresh button</em>
+   <br><em>Figure 9: Hero writing prompt element with refresh button</em>
 </p>
 
 To combat this, when the refresh button is selected the new element needs to be checked against the existing element, and the process repeat until the new element does not match the exiting element.

@@ -185,6 +185,7 @@ All site features have been manually tested. The results of these tests are show
 The following describes the main issues that were detected and corrected during the testing process.
 
 ### Updates and Fixes
+The following sections describe those bugs/issues that were identified and rectified during the development process.
 
 #### Site Loading Notification
 The landing page, `index.html`, contains limited static content. Most page content is constructed dynamically as the site is used. 
@@ -196,7 +197,6 @@ When loading the initial landing page, a number of elements need to be loaded be
 </p>
 
 No issues with site loading was identified during development and testing. However, this notice and spinner was added to engage with the user just in case of any connection delays in the future.
-
 
 #### User Testing
 Once the site was complete, a small number of human users tested the site on their personal devices.
@@ -211,7 +211,6 @@ The button at the bottom of the genre selection page was initially labelled "Ins
 
 Having updated the text, the purpose of this button is now clearer.
 
-
 #### Performance Analysis using Lighthouse
 During initial Lighthouse testing a few issues were raised:
 1. Scroll image missing an `alt` text: This decorative image didn't require any alternative text, but the aria-hidden attribute was unintentionally missed during development. This was therefore corrected with the addition of attribute `aria-hidden="true"`.  
@@ -223,7 +222,7 @@ During initial Lighthouse testing a few issues were raised:
 </p>
 
 ### Outstanding Issues
-Further work is still required before the site could be launched as a robust, usable site. The plan is to complete the following before the site is launched and added to my professional portfolio of work.
+Further work is still required before the site can be published for general use. The plan is to complete the following before undertaking further development(described in [README](../../README.md)), launching the site and adding it to my professional portfolio of work.
 
 #### Duplicate Prompt Elements
 In order to generate each element of the writing prompt, an element is randomly selected from a list of appropriate options. This is done using Javascript's `Math.random()` function. For example, to select a 'Hero' an item is randomly selected from an array of candidate heroes, relevant to the user-selected genre:
@@ -231,9 +230,7 @@ In order to generate each element of the writing prompt, an element is randomly 
 ```javascript
 writingPrompt.hero = storyHeroes[Math.floor(Math.random() * storyHeroes.length)];
 ```
-
 This approach gives rise to the possibility that the same element may be selected twice, or more, in succession when the user selects the associated 'refresh' option. This then gives the appearance that the option has not refreshed.
-
 
 <p align="center">
     <img src="screenshots/refresh-writing-element.png" alt="Hero writing prompt element with refresh button">
@@ -243,6 +240,7 @@ This approach gives rise to the possibility that the same element may be selecte
 To combat this, when the refresh button is selected the new element needs to be checked against the existing element, and the process repeat until the new element does not match the exiting element.
 
 #### Site Color Contrast
-
+Further consideration needs to be given to the color palette, increasing color contrast in order to improve site accessibility. 
+This was identified through both personal reflection and Lighthouse testing, and has been included in future work proposals (outlined in [README](../../README.md)).
 
 - - -

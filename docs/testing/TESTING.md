@@ -138,9 +138,26 @@ Stage 3: Writing Page
 
 
 
-## Testing User Stories
+## User Stories
+To validate the achievement of original website goals, the table below revisits every user story and reviews how each is achieved by the final website.
 
-
+| *USER STORY* | *VALIDATION* |
+| ----------- | ----------- |
+| ***Meditative / Free Writer*** | ----- |
+| 1. be given a starting point and context for my writing | Site generates a variety of writing prompts and an area for composing prose based on that prompt |
+| 2. have a clear, minimalist space where I can concentrate solely on writing without distraction of formatting and other tools | A plain, minimalist text writing area is provided, without distraction of formatting, spelling and other tools |
+| 3. be able to retain a record of my writing in case I want to reflect back on it in future | Email facility included that will send all writing (prompt & prose) to the user's email address |
+| ***Short Story Writer*** | ----- |
+| 1. get random inspiration for my writing | Site generates random writing prompts from a pool (file) of options |
+| 2. tailor the writing inspiration based on my current mood | Site generates random prompts according the the user-selected genre, selected based on their current mood. Each part of the generated prompt can also be modified by 'refreshing' the individual prompt elements |
+| 3. be able to retain a copy of my writing for my portfolio | Email facility included that will send all writing (prompt & prose) to the user's email address |
+| ***Creative Writer*** | ----- |
+| 1. get random inspiration for my writing | Site generates random writing prompts from a pool (file) of options |
+| 2. the ability to tailor the writing prompt | Site enables the user to tailor their writing prompt first by selecting a story genre, then each part of the generated prompt can be modified by 'refreshing' the individual prompt elements. This tailoring will be improved in future work (see [README](../../README.md) for more details). |
+| 3. be able to retain a copy of my writing for my portfolio | Email facility included that will send all writing (prompt & prose) to the user's email address |
+| ***Teacher*** | ----- |
+| 1. a free to use resource that can be used in the classroom, on any available computing devices (e.g., laptops, tablets, mobile devices, etc). | Site is free to use and has been tested across a variety of viewports and simulated devices. |
+| 2. a tool that can be used to inspire my students in creative writing exercises | Users are guided through creating a writing prompt that can be used directly within the site, a different writing tool or a handwritten notebook |
 
 
 ## Problems Encountered

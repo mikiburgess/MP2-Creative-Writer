@@ -70,6 +70,8 @@ The needs of these users have been identified and described in the following set
 
 
 #### User Stories
+The four identified users for this site are listed below, along with their specific needs:
+
 * As a meditative / free writer I want to ...
   1. be given a starting point and context for my writing
   2. have a clear, minimalist space where I can concentrate solely on writing without distraction of formatting and other tools
@@ -88,10 +90,6 @@ The needs of these users have been identified and described in the following set
 * As a teacher I want ...
   1. a free to use resource that can be used in the classroom, on any available computing devices (e.g., laptops, tablets, mobile devices, etc).
   2. a tool that can be used to inspire my students in creative writing exercises
-
-* As a new user I want to ...
-  1. have an intuitive, simple-to-use, interface
-  2. be able to use the site quickly and easily
 
 
 ### Structure

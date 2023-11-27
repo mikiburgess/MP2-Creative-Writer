@@ -4,7 +4,7 @@ The website completed and presented for Milestone Project 2 is intended to be a 
 It has been designed and developed using a mobile-first approach, and is accessible and responsive across a range of devices.
 
 <p align="center">
-    <img src="docs/images/amiresponsive.png" alt="Illustration of site across a variety of devices">
+    <img src="docs/images/amiresponsive-overview.png" alt="Illustration of site across a variety of devices">
 </p>
 
 [Visit the deployed site](https://mikiburgess.github.io/MP2-Creative-Writer/)

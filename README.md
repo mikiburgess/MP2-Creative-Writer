@@ -350,3 +350,156 @@ Full overview and results of site testing can be found in [TESTING.MD](docs/test
 
 <kbd>[Return to ToC](#Table-of-Contents)</kbd>
 - - -
+
+## Guide to Deployment and Development
+This section describes how to use the project repository for deploying the site or for undertaking further local development.
+
+In order to navigate to the start of the project repository you can either scroll to the top of this page, or click on [mikiburgess/MP2-Creative-Writer](https://github.com/mikiburgess/MP2-Creative-Writer/).
+
+
+### Deployment
+[GitHub Pages](https://pages.github.com/) was used to deploy the live website. The instructions to achieve this are below:
+
+1. Log in (or sign up) to GitHub.
+2. Navigate to the project repository.
+3. Click on the Settings link.
+4. Scroll down to find the Pages link in the left hand side navigation bar.
+5. Click on the Pages link and locate the Build and Deployment section.
+6. Under the Source option, select *Deploy from a branch* from the drop-down box.
+7. Under the Branch section, select *master* then */(root)* from the two drop-down boxes, then click Save. 
+
+The site will now be deployed by GitHub Pages and available at the URL shown near the top of the page. Click on the Visit Site button to be taken there directly.
+
+### Local Development
+
+#### How to Fork this Project Repo
+1. Log in (or sign up) to Github.
+2. Navigate to the project repository.
+3. Click the Fork button at the top right of the page.
+
+#### How to Clone this Project Repo
+1. Log in (or sign up) to GitHub.
+2. Navigate to the project repository.
+3. Click on the Code button, ans select the Local tab.
+4. Select whether you would like to clone with HTTPS, SSH or GitHub CLI.
+5. Copy the link shown by clicking the 'copy' button.
+6. Open the  in your code editor and change the current working directory to the location you want to use for the cloned directory.
+7. Type the command 'git clone' into the terminal and then paste the link you copied from GitHub. 
+8. Press enter. You will now have a clone of the project repo.
+
+
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
+- - -
+
+## Project Review and Reflection
+
+
+### Improvements to Design and Development
+
+#### Automated Testing
+Manual testing was undertaken before project completion. However, this process could be improved and the site more robust through the inclusion of automated testing (ideally, taking a test-driven approach to development). Initially this would use the [Jest JavaScript Testing Framework](https://jestjs.io/), but extended to other testing methods and frameworks as knowledge and skills develop. 
+
+Full details of the approach to testing that has been taken and the ways in which this could be developed in future can be found in the accompanying [TESTING.MD](docs/testing/TESTING.md) page.
+
+#### Improved Code Efficiency
+In a few areas the code could be made more efficient with additional work and refactoring. For example, the `generatePrompt()` function could be shorter by using suitable data structures and loops to generate the individual elements of the writing prompt as opposed to the current repetition. 
+
+#### Improved Site Flexibility
+The above would also enable the site to be more flexible, allowing for fewer or more prompt elements based on user preference. This could then propagate through the code to dynamically generate the displaying and saving of the final complete prompt.
+
+#### Improved Data Storage
+Writing prompt data is currently stored in memory whilst the user interacts with the site, being included in the `data.js` script file that is loaded into memory upon first site load. Due to this approach, the amount of data has been kept intentionally small.
+A more efficient approach to data storage would use a structured JSON file to hold all site data, and only those areas relevant to the current site visit then loaded into memory.
+A further improvement would be the addition of a light-weight backend database, such as SQLite, to enable a larger collection of writing prompt data to be stored and used, providing site visitors with a broader array of writing inspirations.
+
+
+### Future Features
+
+#### Initial Developments
+The following developments would be incorporated within the first 1-3 months of further development, with the aim of completing these before official site launch.
+
+##### Alternative Color Scheme
+The current site color palette was selected according to the aim of replicating the feel of an old, handwritten book. However, this has resulted in a site across which may be difficult to access for some visually impaired individuals. The addition of other color schemes is therefore required to improve accessibility for all site visitors. 
+This development will comprise the following:
+ - A *high contrast* color palette that can be applied to improve accessibility
+ - A *dark mode* option to support users who prefer a darker color scheme, such as when using the site at night.
+
+##### Site Alerts 
+The current site relies on popup alerts for the user to confirm/cancel requests to restart from the welcome page and to make sure they select a genre before a writing prompt can be generated. This is potentially problematic as site visitors may have disabled popups for security reasons. The site will therefore be developed further to remove popups and use only in-site notifications (such as the one currently included to confirm to the user that their email has been sent).
+
+##### Expand Genre Card Functionality
+Site visitors currently have to click the the genre buttons to select a writing prompt genre. Site interaction could be improved by allowing users to click on the genre illustrations as well as the buttons.
+
+##### Develop the 'Experiment' Option
+The *Experiment* option has been included as a starting point for future development. The final aim of this option will be to allow the user to refresh the genre option as well as the individual prompt elements, and be able to generate a prompt using data across all genres. This will provide more flexibility with regard to tailoring the writing prompt, and is aimed specifically at the user 'Creative Writer'. 
+
+##### Show Last Clicked Genre Button
+When a genre selection button is clicked, the selected genre is displayed in the scroll image at the top of the page. When using a small or medium viewport this can result in the user needing to scroll up in order to see and confirm the current selection. Site usability could be improved by updating the formatting of the most recently selected genre button by adding an active class for dynamic CSS styling, then removing that class when another option is selected.
+
+#### Future Developments
+Once the initial developments have been completed and version 1 of the site launched for general use, the following features would be developed. This development process would follow a review of the 
+
+##### Visitor Feedback Option
+Once writers have used this site they may have suggestions for additional features that would help them in their creative writing, or requests for additional genres/themes. In order to ensure the site remains appropriate for the intended target audience a site feedback form will be added. Relevant/appropriate feedback will then be considered and feed into future development plans.
+
+#### Hide 'Return to Start' on welcome page
+At every stage of the site the '*Return to Start*' option is present and available in the top-left corner. When viewing the initial welcome page the presence of this button is superfluous, as the effect of clicking this would be to view the same page and clear data (variables) that were already cleared when the page loaded. Therefore, in future versions of this site the '*Return to Start*' option will not be present on the welcome page.
+
+##### Include Icons & Emojis
+The current JavaScript objects used to store writing prompt data include references to [Fontawesome](https://fontawesome.com/) icons and [Emojis](https://www.webfx.com/tools/emoji-cheat-sheet/) that can be used to graphically represent each prompt element. Some currently hold temporary references, but once developed further these can be added to the site to illustrate each writing prompt element. The potential also exists for the prompt generator to be revised to provide the option of generating either written or visual creative writing prompts.
+
+##### PDF Generator
+In addition to the ability to email the generated prompt and (if completed) the corresponding story, the facility to save as a formatted PDF document could be added to the site. This additional option would increase service flexibility by facilitating the easy saving and printing of the users work. This feature could be developed in Javascript using one of the many available libraries, such as [pdfme](https://github.com/pdfme/pdfme), or utilise an existing web service. This expansion could also be developed further to allow for text download, or other formats. 
+
+##### Incorporating Generative AI Tools
+Due to the increasing availability of generative AI tools, these could be incorporated into the site to support users further in their creative writing. For example:
+- Incorporating a text generator, such as [ChatGPT](https://chat.openai.com/), to create an alternative story from the generated writing prompt. This could be used to compare and contrast against the writers own story, which would be of use in student reflection activities in a learning environment.
+- Sending the completed story to an image generator, such as [DALL-E 2](https://openai.com/dall-e-2)  ...
+- Including the option to generate a visual prompt rather than a text prompt. Using any of the number of AI image generators a text prompt could be generated, sent to the image generator, and the image displayed as the inspiration for a creative writing activity.
+
+
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
+- - -
+
+## Credits
+
+### Site Media
+- All images obtained from [Pixabay](https://pixabay.com/) are free to use under their [Content License](https://pixabay.com/service/license-summary/). The individual creators for these images are as follows:
+  - Site background - [ArtsyBee](https://pixabay.com/users/artsybee-462611/)
+  - Adventure - [Franz26](https://pixabay.com/users/franz26-1553839/)
+  - Historical - [darksouls1](https://pixabay.com/users/darksouls1-2189876/)
+  - Fantasy - [psychofladoodle](https://pixabay.com/users/psychofladoodle-19768699/)
+  - Scary - [intographics](https://pixabay.com/users/intographics-2633886/)
+  - Just Write! - [Art_Dreams](https://pixabay.com/users/art_dreams-5864742/)
+  - Experiment! - [ArtTower](https://pixabay.com/users/arttower-5337/)
+- Site icon - by junichi hayama from [Noun Project](https://thenounproject.com/browse/icons/term/write/) (CC BY 3.0), free to use with attribution (added to site footer).
+
+### Additional Code and Resources
+- The fonts used in this project are from [Google](https://fonts.google.com/) and [Fontawesome](https://fontawesome.com/). 
+- Information badges at top of README created using [Shields.io](https://shields.io/)
+
+### Learning Resources
+- Development of the two project markdown files were supported through reference to the following three resources:
+  - GitHub's [Writing on GitHub](https://docs.github.com/en/get-started/writing-on-github) documentation, 
+  - Kera Cudmore's [Readme Examples](https://github.com/kera-cudmore/readme-examples/blob/main/milestone1-readme.md) for Code Institute Diploma Students,
+  - Adam Pritchard's [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+- General accessibility guidance was obtained from the [W3C ARIA guidelines](https://www.w3.org/WAI/ARIA/apg/).
+- Guidance on ARIA roles and attributes obtained from [MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA).
+- Additional learning on Bootstrap 5 was undertaken using the [W3Schools Bootstrap 5 Tutorial](https://www.w3schools.com/bootstrap5/index.php).
+- Guidance on using the three Lighthouse modes (user flows) was obtained from Google Chrome's [Lighthouse documentation](https://github.com/GoogleChrome/lighthouse/blob/HEAD/docs/user-flows.md).
+
+### Inspiration
+- Inspiration for The Creative Writer comes from the various books, magazines and tools that help writers by providing prompts to kickstart creative writing. One such tool is the [Writing Inspiration Dice from Two Tumbleweeds](https://www.twotumbleweeds.co/products/writing-dice-inspiration-for-creative-writing)
+- The structure of this readme document was inspired by MP2 projects from my Code Institute peers Siobhan Gorman's [Mixtape Quiz](https://github.com/siobhanlgorman/80s-Mixtape-Quiz), Moira Hartingigan's [Alien Memory Game](https://github.com/moirahartigan/Portfolio-2---Alien-Memory-Game) and Emma Hewson's [Travel Quiz](https://github.com/emmahewson/mp2_travel_quiz/tree/main)
+- The use of the [EmailJS](https://www.emailjs.com/) library for sending emails in JavaScript was inspired by the Code institute 'Interactive Resume' walkthrough project. 
+
+### Acknowledgements
+I would like to acknowledge the following people who helped me complete this milestone project:
+- [Iris Smok](https://github.com/Iris-Smok) - our Code Institute cohort facilitator.
+- [Jubril Akolade](https://github.com/Jubrillionaire) - my Code Institute mentor.
+- The Code Institute Slack community, including the feb-2023-pla cohort channel. 
+- My volunteer human testing and feedback team of Dr N Caine, Dr W Ivins, Ms H Phillips, and Mr J Ivins.
+
+
+<kbd>[Return to ToC](#Table-of-Contents)</kbd>
+- - -

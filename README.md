@@ -28,13 +28,13 @@ It has been designed and developed using a mobile-first approach, and is accessi
   - [Structure](#Structure)
   - [Skeleton](#Skeleton)
   - [Surface](#Surface)
-- Site Development
-- Site Features
-  - Current Features
-  - Future Features
-- Guide to Deployment and Development
-- Project Reflection
-- Credits
+- [Site Functionality](#Site-Functionality)
+- [Site Development](#Site-Development)
+- [Testing](#Testing)
+- [Guide to Deployment and Development](#Guide-to-Deployment-and-Development)
+- [Project Review and Reflection](#Project-Review-and-Reflection)
+- [Credits](#Credits)
+
 
 - - -
 
@@ -301,6 +301,7 @@ For example, based on the prompt and text written in the above example the user 
 
 
 ## Site Development
+
 ### Development Tools
 - UI Wireframes were created using [Balsamiq](https://balsamiq.com/)
 - Code was be developed locally using [Visual Studio Code](https://code.visualstudio.com/)
@@ -476,6 +477,7 @@ Due to the increasing availability of generative AI tools, these could be incorp
 
 ### Additional Code and Resources
 - The fonts used in this project are from [Google](https://fonts.google.com/) and [Fontawesome](https://fontawesome.com/). 
+- [EmailJS](https://www.emailjs.com/) JavaScript library imported and used to enable implementation of email functionality.
 - Information badges at top of README created using [Shields.io](https://shields.io/)
 
 ### Learning Resources

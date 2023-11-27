@@ -13,6 +13,7 @@ Overview of the testing of Milestone Project 2 - The Creative Writer.
    - [Introduction](#Introduction)
    - [Browser Compatibility](#Browser-Compatibility)
    - [Site Responsiveness](#Site-Responsiveness)
+   - [Code Validation](#Code-Validation)
 
 - - -
 
@@ -26,6 +27,7 @@ This document describes the testing process and results for Milestone Project 2.
 ## Browser Compatibility
 Browser compatibility testing was completed with Chrome, Firefox, Safari and Opera, running on a MacBook. Edge and IE were not tested at this stage due to lack of access to those browsers. Before professional site deployment, compatibility would need to be tested on Windows-specific and a selection of mobile-specific browsers.
 
+*Table 1: Browser responsiveness test results*
 
 | | CHROME | FIREFOX | SAFARI | OPERA | Notes | 
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- 
@@ -43,19 +45,19 @@ Due to lack of access to multiple devices, all device responsiveness tests were 
 
 <p align="center">
     <img src="responsive/rdc-10inch-notebook-small.png" alt="Illustration of site viewed on a 10 inch notebook">
-    <br><em>Figure: Responsive Design Checker Example</em>
+    <br><em>Figure 1: Responsive Design Checker Example</em>
 </p>
 
 <p align="center">
     <img src="responsive/amiresponsive-small.png" alt="Illustration of site across a variety of devices">
-   <br><em>Figure: AmIResponsive Example</em>
+   <br><em>Figure 2: AmIResponsive Example</em>
 </p>
 
 
 The following tables contain screenshots and results of the responsiveness tests.
 
 
-*Table: Results of responsive tests on simulated devices*
+*Table 2: Results of responsive tests on simulated devices*
 
 | *TOOL* | *TESTS* |  
 | ----------- | ----------- |
@@ -64,7 +66,7 @@ The following tables contain screenshots and results of the responsiveness tests
 | [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/device-mode/) | [iPad-landscape](responsive/chrome-simulated-ipad-landscape/), [iPad-portrait](responsive/chrome-simulated-ipad-portrait/), [Moto G4-landscape](responsive/chrome-simulated-moto-g4-landscape/), [Moto G4-portrait](responsive/chrome-simulated-ipad-portrait/) |
 
 
-*Table: Results of responsive tests across Bootstrap Breakpoints*
+*Table 3: Results of responsive tests across Bootstrap Breakpoints*
 
 | Stage | *XS* | *SM* | *MD* | *LG* | *XL* | *XXL* | *Comment* |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -77,16 +79,33 @@ The following tables contain screenshots and results of the responsiveness tests
 - - -
 
 ## Code Validation
+Project HTML, CSS and JavaScript code were parsed by online code validation tools. The following sections describe the validation process and discuss the returned results.
 
-HTML Validator
-   image
+### HTML Validation
+The [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input) was used to check project HTML (using the 'direct input' option). Two warnings were identified.
 
-CSS Validator
-   image
+The validator highlighted that html `section`'s should contain headings. Headings were intentionally omitted during the development process as sections were included to distinguish between the three areas of the site page, not indicate visual page areas. `Section` was used to be more intuitive to the human reader (eg, during code development and maintenance). 
+Considering the feedback from the validator, in future the more appropriate `div` element will be used rather than `section`.
+
+![Feedback on section headings](screenshots/html-section-headings.png) 
+*Figure 3: Section headings*
+
+The validator also highlighted that, when referring to JavaScript resources, including ```type="text/javascript"``` is superfluous. This was included for code readability and has no impact on functionality ot performance. However, these could be removed in future.
+
+![Feedback on script elements](screenshots/html-javascript-type.png) 
+*Figure 4: Script elements*
+
+No other issues were identified by the validator.
+
+### CSS Validation
+The [W3C Jigsaw Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input) was used to check project CSS (using the 'direct input' option).
+No issues or warnings were raised.
+
+![Successful CSS validation](screenshots/css-validation.png) 
+*Figure 5: Result of CSS Validation*
 
 ### JavaScript Validation
-
-The three javascript files were validated using [JSHint v2.13](https://jshint.com/). 
+The three JavaScript files were validated using [JSHint v2.13](https://jshint.com/). 
 
 `data.js`
 - 13 unused variables: These are not used within this script file, but used by code in script.js
@@ -99,7 +118,9 @@ The three javascript files were validated using [JSHint v2.13](https://jshint.co
 - 1 undefined variable: Refers to `emailjs` function from the [EmailJS](https://www.emailjs.com/) library, loaded within `index.html`. 
 - 1 unused variable: Refers to the function `emailWriting` which is unused within this script file, but is called from a site button (other code).
 
+No other issues were raised.
 
+- - -
 
 ## Lighthouse Testing
 
